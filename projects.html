@@ -1,1 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Projects - H1APPS</title>
+  <meta name="description" content="Explore our portfolio of mobile app development projects across various industries and platforms." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/22logo.png" alt="H1APPS Logo">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
 
+  <header class="page-header">
+    <div class="container">
+      <h1>Our Projects</h1>
+      <p>Explore our portfolio of successful mobile applications across various industries</p>
+    </div>
+  </header>
+
+  <section class="projects-filter">
+    <div class="section-container">
+      <div class="filter-options">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+        <button class="filter-btn" data-filter="social">Social</button>
+        <button class="filter-btn" data-filter="productivity">Productivity</button>
+        <button class="filter-btn" data-filter="health">Health & Fitness</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-showcase">
+    <div class="section-container">
+      <div class="project-detail" id="alameer">
+        <div class="project-header">
+          <h2>Alameer Hydraulics</h2>
+          <div class="project-meta">
+            <span class="category">E-commerce</span>
+            <span class="year">2023</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-gallery">
+            <img src="assets/alameer-preview.jpg" alt="Alameer App Screenshot">
+            <!-- More images can be added here -->
+          </div>
+          <div class="project-info">
+            <h3>Project Overview</h3>
+            <p>A custom-built mobile app for a hydraulic parts store in Palestine, developed with modern UI/UX standards and Firebase backend. The app allows customers to browse products, place orders, and track deliveries, while the admin can manage inventory and process orders.</p>
+            
+            <h3>Key Features</h3>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Product catalog with categories and search</li>
+              <li><i class="fas fa-check"></i> Shopping cart and checkout process</li>
+              <li><i class="fas fa-check"></i> Order tracking and history</li>
+              <li><i class="fas fa-check"></i> Admin dashboard for inventory management</li>
+              <li><i class="fas fa-check"></i> Push notifications for order updates</li>
+            </ul>
+            
+            <h3>Technologies Used</h3>
+            <div class="tech-tags">
+              <span>Flutter</span>
+              <span>Firebase</span>
+              <span>Dart</span>
+              <span>Node.js</span>
+              <span>UI/UX Design</span>
+            </div>
+            
+            <div class="project-links">
+              <a href="https://play.google.com/store/apps/details?id=com.h1apps.alameer_hydraulics" target="_blank" class="btn-primary">
+                <i class="fab fa-google-play"></i> Google Play
+              </a>
+              <a href="https://apps.apple.com/us/app/alameer-hydraulics/id6748326392" target="_blank" class="btn-primary">
+                <i class="fab fa-apple"></i> App Store
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-detail" id="anonplus">
+        <div class="project-header">
+          <h2>AnonPlus</h2>
+          <div class="project-meta">
+            <span class="category">Social Network</span>
+            <span class="year">2022</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-gallery">
+            <img src="assets/anonplus-preview.jpg" alt="AnonPlus App Screenshot">
+            <!-- More images can be added here -->
+          </div>
+          <div class="project-info">
+            <h3>Project Overview</h3>
+            <p>An anonymous confession app where users can post, interact, and report freely in a safe, moderated environment. Built with Flutter and Firebase, AnonPlus provides a platform for users to share thoughts without revealing their identity, with robust content moderation tools.</p>
+            
+            <h3>Key Features</h3>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Anonymous posting and commenting</li>
+              <li><i class="fas fa-check"></i> Upvote/downvote system</li>
+              <li><i class="fas fa-check"></i> Content moderation dashboard</li>
+              <li><i class="fas fa-check"></i> User reporting system</li>
+              <li><i class="fas fa-check"></i> Real-time updates</li>
+            </ul>
+            
+            <h3>Technologies Used</h3>
+            <div class="tech-tags">
+              <span>Flutter</span>
+              <span>Firebase</span>
+              <span>Cloud Functions</span>
+              <span>Firestore</span>
+              <span>Authentication</span>
+            </div>
+            
+            <div class="project-links">
+              <a href="https://hammam00.github.io/anonplus/" target="_blank" class="btn-primary">
+                <i class="fas fa-external-link-alt"></i> Visit Website
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-detail" id="echohamm">
+        <div class="project-header">
+          <h2>Echo Hamm</h2>
+          <div class="project-meta">
+            <span class="category">Productivity</span>
+            <span class="year">2023</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-gallery">
+            <img src="assets/echohamm-preview.jpg" alt="Echo Hamm App Screenshot">
+            <!-- More images can be added here -->
+          </div>
+          <div class="project-info">
+            <h3>Project Overview</h3>
+            <p>A creative voice-based journaling app designed to help users express their thoughts and archive their emotional journeys through audio entries. Echo Hamm provides a private space for users to record, organize, and reflect on their voice memos with emotion tagging and search functionality.</p>
+            
+            <h3>Key Features</h3>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Voice recording with background audio support</li>
+              <li><i class="fas fa-check"></i> Emotion tagging and mood tracking</li>
+              <li><i class="fas fa-check"></i> Cloud sync across devices</li>
+              <li><i class="fas fa-check"></i> Transcription service (optional)</li>
+              <li><i class="fas fa-check"></i> Password protection</li>
+            </ul>
+            
+            <h3>Technologies Used</h3>
+            <div class="tech-tags">
+              <span>Flutter</span>
+              <span>Firebase Storage</span>
+              <span>Audio Processing</span>
+              <span>Cloud Firestore</span>
+              <span>Local Database</span>
+            </div>
+            
+            <div class="project-links">
+              <a href="https://hammam00.github.io/echohamm/" target="_blank" class="btn-primary">
+                <i class="fas fa-external-link-alt"></i> Visit Website
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="section-container">
+      <h2>Have a Project in Mind?</h2>
+      <p>Let's discuss how we can bring your mobile app idea to life.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn-primary">Get a Free Quote</a>
+        <a href="tel:+1234567890" class="btn-secondary">
+          <i class="fas fa-phone"></i> Call Us Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="assets/logo.png" alt="H1APPS Logo" />
+        <p>Professional Mobile App Development</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Info</h4>
+        <ul>
+          <li><i class="fas fa-envelope"></i> info@h1apps.xyz</li>
+          <li><i class="fas fa-phone"></i> +123 456 7890</li>
+          <li><i class="fas fa-map-marker-alt"></i> Palestine</li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 H1APPS. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
