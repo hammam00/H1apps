@@ -15,11 +15,32 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/22logo.png" alt="H1APPS Logo">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
   <header class="hero">
     <div class="hero-content">
       <img src="assets/22logo.png" alt="H1APPS Logo" class="logo" />
       <h1>H1APPS</h1>
       <p class="tagline">Turning Ideas Into Digital Reality</p>
+      <div class="cta-buttons">
+        <a href="projects.html" class="btn-primary">View Our Work</a>
+        <a href="contact.html" class="btn-secondary">Get a Quote</a>
+      </div>
       <div class="scroll-down">
         <i class="fas fa-chevron-down"></i>
       </div>
@@ -33,7 +54,7 @@
     </div>
   </header>
 
-  <section class="about">
+  <section class="about" id="about">
     <div class="section-container">
       <h2 class="section-title">About Us</h2>
       <div class="about-content">
@@ -52,203 +73,98 @@
             <span class="stat-label">Support</span>
           </div>
         </div>
+        <a href="about.html" class="btn-primary">Learn More About Us</a>
       </div>
     </div>
   </section>
 
-  <section class="founder">
+  <section class="services">
     <div class="section-container">
-      <h2 class="section-title">Founder</h2>
-      <div class="founder-card">
-       
-        <div class="founder-info">
-          <h3>Hammam Aghbar</h3>
-          <p class="position">Founder & CEO at H1APPS</p>
-          <p class="bio">Passionate mobile app developer specializing in delivering smart and scalable digital solutions. With a solid background in AI and mobile technology, Hammam leads H1APPS to create impactful applications that solve real-world problems and elevate business performance.</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Mobile App Development</h3>
+          <p>Custom native and cross-platform mobile applications for iOS and Android using Flutter, Swift, and Kotlin.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Web Development</h3>
+          <p>Responsive and interactive web applications with modern frameworks like React and Vue.js.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-paint-brush"></i>
+          <h3>UI/UX Design</h3>
+          <p>Beautiful and intuitive user interfaces that enhance user experience and engagement.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="projects">
+  <section class="projects-preview" id="projects">
     <div class="section-container">
       <h2 class="section-title">Featured Projects</h2>
       <p class="section-subtitle">Our portfolio showcases the diversity and quality of our work</p>
       
-      <div class="project-card">
-        <div class="project-image">
-          <img src="assets/alameer-preview.jpg" alt="Alameer Project Preview" />
-          <div class="project-badge">Android /IOS App</div>
-        </div>
-        <div class="project-info">
-          <div class="project-header">
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="assets/alameer-preview.jpg" alt="Alameer Hydraulics">
+          <div class="project-overlay">
             <h3>Alameer Hydraulics</h3>
-            <div class="project-tech">
-              <span>Flutter</span>
-              <span>Firebase</span>
-              <span>UI/UX</span>
-            </div>
+            <p>E-commerce app for hydraulic parts</p>
+            <a href="projects.html#alameer" class="btn-secondary">View Project</a>
           </div>
-          <p>A custom-built mobile app for a hydraulic parts store in Palestine, developed with modern UI/UX standards and Firebase backend.</p>
-          <div class="project-features">
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span>E-commerce functionality</span>
-            </div>
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span>Real-time inventory</span>
-            </div>
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span>Admin dashboard</span>
-            </div>
-          </div>
-        <div class="project-actions">
-  <a href="https://play.google.com/store/apps/details?id=com.h1apps.alameer_hydraulics&pcampaignid=web_share" target="_blank" class="btn-primary">
-    <i class="fab fa-google-play"></i> View on Google Play
-  </a>
-  <a href="https://apps.apple.com/us/app/alameer-hydraulics/id6748326392" target="_blank" class="btn-secondary">
-    <i class="fab fa-apple"></i> View on App Store
-  </a>
-</div>
-
         </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-image">
-          <img src="assets/anonplus-preview.jpg" alt="AnonPlus Project Preview" />
-          <div class="project-badge">Social Network</div>
-        </div>
-        <div class="project-info">
-          <div class="project-header">
+        <div class="project-card">
+          <img src="assets/anonplus-preview.jpg" alt="AnonPlus">
+          <div class="project-overlay">
             <h3>AnonPlus</h3>
-            <div class="project-tech">
-              <span>Flutter</span>
-              <span>Firebase</span>
-              <span>Node.js</span>
-            </div>
+            <p>Anonymous social network</p>
+            <a href="projects.html#anonplus" class="btn-secondary">View Project</a>
           </div>
-          <p>An anonymous confession app where users can post, interact, and report freely in a safe, moderated environment. Built with Flutter and Firebase.</p>
-          <div class="project-features">
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span>Anonymous posting</span>
-            </div>
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span>Content moderation</span>
-            </div>
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span>Real-time updates</span>
-            </div>
-          </div>
-          <div class="project-actions">
-            <a href="https://hammam00.github.io/anonplus/" target="_blank" class="btn-primary">
-              <i class="fas fa-external-link-alt"></i> Visit AnonPlus
-            </a>
-            <a href="#" class="btn-secondary">
-              <i class="fas fa-eye"></i> Case Study
-            </a>
+        </div>
+        <div class="project-card">
+          <img src="assets/echohamm-preview.jpg" alt="Echo Hamm">
+          <div class="project-overlay">
+            <h3>Echo Hamm</h3>
+            <p>Voice journaling app</p>
+            <a href="projects.html#echohamm" class="btn-secondary">View Project</a>
           </div>
         </div>
       </div>
-
-      <div class="project-card">
-        <div class="project-image">
-          <img src="assets/echohamm-preview.jpg" alt="Echo Hamm Project Preview" />
-          <div class="project-badge">Productivity</div>
-        </div>
-        <div class="project-info">
-          <div class="project-header">
-            <h3>Echo Hamm</h3>
-            <div class="project-tech">
-              <span>Flutter</span>
-              <span>Firebase</span>
-              <span>Audio Processing</span>
-            </div>
-          </div>
-          <p>A creative voice-based journaling app designed to help users express their thoughts and archive their emotional journeys through audio entries.</p>
-          <div class="project-features">
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span>Voice recording</span>
-            </div>
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span>Emotion tracking</span>
-            </div>
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span>Cloud sync</span>
-            </div>
-          </div>
-          <div class="project-actions">
-            <a href="https://hammam00.github.io/echohamm/" target="_blank" class="btn-primary">
-              <i class="fas fa-external-link-alt"></i> Visit Echo Hamm
-            </a>
-            <a href="#" class="btn-secondary">
-              <i class="fas fa-eye"></i> Case Study
-            </a>
-          </div>
-        </div>
+      <div class="text-center">
+        <a href="projects.html" class="btn-primary">View All Projects</a>
       </div>
     </div>
   </section>
 
-  <section class="contact">
+  <section class="testimonials">
     <div class="section-container">
-      <h2 class="section-title">Get In Touch</h2>
-      <p class="section-subtitle">Have a project in mind? Let's discuss how we can help</p>
-      
-      <div class="contact-container">
-        <div class="contact-info">
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <div>
-              <h4>Email</h4>
-              <a href="mailto:info@h1apps.xyz">info@h1apps.xyz</a>
-            </div>
+      <h2 class="section-title">Client Testimonials</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"H1APPS delivered our e-commerce app on time and exceeded our expectations. Their attention to detail and communication throughout the project was exceptional."</p>
           </div>
-          <div class="contact-item">
-            <i class="fab fa-instagram"></i>
-            <div>
-              <h4>Instagram</h4>
-              <a href="https://instagram.com/h1apps" target="_blank">@h1apps</a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <div>
-              <h4>Location</h4>
-              <span>Palestine</span>
-            </div>
+          <div class="testimonial-author">
+            <h4>Mohammed Alameer</h4>
+            <p>CEO, Alameer Hydraulics</p>
           </div>
         </div>
-        <form class="contact-form">
-          <div class="form-group">
-            <input type="text" placeholder="Your Name" required />
-          </div>
-          <div class="form-group">
-            <input type="email" placeholder="Your Email" required />
-          </div>
-          <div class="form-group">
-            <input type="text" placeholder="Subject" />
-          </div>
-          <div class="form-group">
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn-primary">
-            <i class="fas fa-paper-plane"></i> Send Message
-          </button>
-        </form>
+        <!-- More testimonials can be added here -->
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="section-container">
+      <h2>Ready to Start Your Project?</h2>
+      <p>Get in touch with us today to discuss your mobile app development needs.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn-primary">Contact Us</a>
+        <a href="tel:+1234567890" class="btn-secondary">
+          <i class="fas fa-phone"></i> Call Us
+        </a>
       </div>
     </div>
   </section>
@@ -262,10 +178,18 @@
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Info</h4>
+        <ul>
+          <li><i class="fas fa-envelope"></i> info@h1apps.xyz</li>
+          <li><i class="fas fa-phone"></i> +123 456 7890</li>
+          <li><i class="fas fa-map-marker-alt"></i> Palestine</li>
         </ul>
       </div>
       <div class="footer-social">
@@ -282,5 +206,7 @@
       <p>&copy; 2025 H1APPS. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
