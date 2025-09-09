@@ -1,0 +1,25 @@
+/* H1APPS custom styles */
+:root {
+  --bg: #0B0F1A;
+  --card: #121826;
+  --text: #E6EAF2;
+  --muted: #9AA6B2;
+  --accent: #4DA3FF;
+  --accent-soft: #2B5D9C;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--accent) 15%, transparent);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+/* Smooth animations */
+a, button { transition: all .2s ease; }
+
+@media (max-width: 768px) {
+  /* small tweaks for mobile */
+}
