@@ -1,212 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>H1APPS – Mobile App Development</title>
-  <meta name="description" content="H1APPS – Professional mobile app development company building custom software solutions for startups and businesses." />
-  <meta property="og:title" content="H1APPS – Mobile App Development" />
-  <meta property="og:description" content="We build high-quality mobile apps tailored for your business needs. Based in Palestine, delivering globally." />
-  <meta property="og:image" content="https://hammam00.github.io/H1apps/assets/1.png" />
-  <meta property="og:url" content="https://hammam00.github.io/H1apps/" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" type="image/png" href="assets/12.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>H1APPS — Custom Apps for Every Platform</title>
+  <meta name="description" content="H1APPS builds elegant, high‑performance apps for iOS, Android, and Web — e‑commerce, accounting, and fully custom solutions.">
+  <meta name="theme-color" content="#0B0F1A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="H1APPS — Custom Apps for Every Platform">
+  <meta property="og:description" content="H1APPS builds elegant, high‑performance apps for iOS, Android, and Web — e‑commerce, accounting, and fully custom solutions.">
+  <meta property="og:image" content="/assets/logo.jpeg">
+  <link rel="icon" href="/assets/logo.jpeg" type="image/jpeg+xml">
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            basebg: "#0B0F1A",
+            card: "#121826",
+            textp: "#E6EAF2",
+            muted: "#9AA6B2",
+            accent: "#4DA3FF",
+            accents: "#2B5D9C"
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">
-        <img src="assets/1.png" alt="H1APPS Logo">
+<body class="bg-basebg text-textp antialiased selection:bg-accents/30">
+  <header class="sticky top-0 z-50 backdrop-blur bg-basebg/70 border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-3">
+        <img src="/assets/logo.jpeg" alt="H1APPS logo" class="w-9 h-9" />
+        <span class="font-semibold tracking-wide">H1APPS</span>
       </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="hamburger">
-        <i class="fas fa-bars"></i>
-      </div>
-    </div>
-  </nav>
-
-  <header class="hero">
-    <div class="hero-content">
-      <img src="assets/22logo.png" alt="H1APPS Logo" class="logo" />
-      <h1>H1APPS</h1>
-      <p class="tagline">Turning Ideas Into Digital Reality</p>
-      <div class="cta-buttons">
-        <a href="projects.html" class="btn-primary">View Our Work</a>
-        <a href="contact.html" class="btn-secondary">Get a Quote</a>
-      </div>
-      <div class="scroll-down">
-        <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-    <div class="hero-wave">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#f9f9f9"></path>
-        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#f9f9f9"></path>
-        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#f9f9f9"></path>
-      </svg>
+      <nav>
+        <button id="navToggle" class="md:hidden inline-flex items-center rounded-lg px-3 py-2 border border-white/10 hover:border-white/20">Menu</button>
+        <ul id="navMenu" class="hidden md:flex items-center gap-6 text-sm">
+          <li><a class="hover:text-white/90 text-white/90" href="/index.html">Home</a></li>
+          <li><a class="hover:text-white/90 text-muted" href="/about.html">About</a></li>
+          <li><a class="hover:text-white/90 text-muted" href="/apps.html">Apps</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <section class="about" id="about">
-    <div class="section-container">
-      <h2 class="section-title">About Us</h2>
-      <div class="about-content">
-        <p>H1APPS is a mobile app development company that builds high-quality applications and digital solutions for individuals, startups, and companies. Whether you're launching a new business or upgrading an existing one, we turn your ideas into functional, user-friendly, and scalable software.</p>
-        <div class="stats">
-          <div class="stat-item">
-            <span class="stat-number">50+</span>
-            <span class="stat-label">Projects Completed</span>
+  <main>
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 -z-10 opacity-40 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accents via-basebg to-basebg"></div>
+      <div class="max-w-6xl mx-auto px-4 py-16 md:py-24">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+              We design & build<br><span class="text-accent">cross‑platform</span> apps
+            </h1>
+            <p class="mt-4 text-base md:text-lg text-muted max-w-prose">
+              From concept to launch, we craft tailored applications for iOS, Android, and Web. E‑commerce, accounting, and fully custom systems — built to scale and beautifully designed.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="/apps.html" class="px-5 py-3 rounded-xl bg-accent hover:bg-accents text-base font-semibold">Explore our apps</a>
+              <a href="mailto:info@h1apps.xyz" class="px-5 py-3 rounded-xl border border-white/10 hover:border-white/20">Start a project</a>
+            </div>
           </div>
-          <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Client Satisfaction</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">24/7</span>
-            <span class="stat-label">Support</span>
+          <div class="rounded-2xl bg-card/80 border border-white/5 p-6 md:p-8 shadow-xl">
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>
+                <div>
+                  <p class="font-semibold">E‑commerce apps</p>
+                  <p class="text-sm text-muted">Elegant storefronts, product catalogs, payments, analytics — optimized for conversion.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>
+                <div>
+                  <p class="font-semibold">Accounting & business systems</p>
+                  <p class="text-sm text-muted">Invoices, inventory, roles & permissions, and real‑time dashboards.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-accent"></span>
+                <div>
+                  <p class="font-semibold">Fully custom apps</p>
+                  <p class="text-sm text-muted">We implement the features you imagine — design‑first and performance‑driven.</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
-        <a href="about.html" class="btn-primary">Learn More About Us</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="services">
-    <div class="section-container">
-      <h2 class="section-title">Our Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <i class="fas fa-mobile-alt"></i>
-          <h3>Mobile App Development</h3>
-          <p>Custom native and cross-platform mobile applications for iOS and Android using Flutter, Swift, and Kotlin.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-laptop-code"></i>
-          <h3>Web Development</h3>
-          <p>Responsive and interactive web applications with modern frameworks like React and Vue.js.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-paint-brush"></i>
-          <h3>UI/UX Design</h3>
-          <p>Beautiful and intuitive user interfaces that enhance user experience and engagement.</p>
-        </div>
+    <!-- Featured Apps -->
+    <section class="max-w-6xl mx-auto px-4 py-16">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl md:text-3xl font-bold">Featured apps</h2>
+        <a href="/apps.html" class="text-sm text-muted hover:text-textp">See all</a>
       </div>
-    </div>
-  </section>
-
-  <section class="projects-preview" id="projects">
-    <div class="section-container">
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-subtitle">Our portfolio showcases the diversity and quality of our work</p>
-      
-      <div class="projects-grid">
-        <div class="project-card">
-          <img src="assets/alameer-preview.jpg" alt="Alameer Hydraulics">
-          <div class="project-overlay">
-            <h3>Alameer Hydraulics</h3>
-            <p>E-commerce app for hydraulic parts</p>
-            <a href="projects.html#alameer" class="btn-secondary">View Project</a>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="assets/anonplus-preview.jpg" alt="AnonPlus">
-          <div class="project-overlay">
-            <h3>AnonPlus</h3>
-            <p>Anonymous social network</p>
-            <a href="projects.html#anonplus" class="btn-secondary">View Project</a>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="assets/echohamm-preview.jpg" alt="Echo Hamm">
-          <div class="project-overlay">
-            <h3>Echo Hamm</h3>
-            <p>Voice journaling app</p>
-            <a href="projects.html#echohamm" class="btn-secondary">View Project</a>
-          </div>
-        </div>
-      </div>
-      <div class="text-center">
-        <a href="projects.html" class="btn-primary">View All Projects</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials">
-    <div class="section-container">
-      <h2 class="section-title">Client Testimonials</h2>
-      <div class="testimonial-slider">
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <p>"H1APPS delivered our e-commerce app on time and exceeded our expectations. Their attention to detail and communication throughout the project was exceptional."</p>
-          </div>
-          <div class="testimonial-author">
-            <h4>.</h4>
-            <p>CEO, Alameer Hydraulics</p>
-          </div>
-        </div>
-        <!-- More testimonials can be added here -->
-      </div>
-    </div>
-  </section>
-
-  <section class="cta" id="contact">
-    <div class="section-container">
-      <h2>Ready to Start Your Project?</h2>
-      <p>Get in touch with us today to discuss your mobile app development needs.</p>
-      <div class="cta-buttons">
-        <a href="contact.html" class="btn-primary">Contact Us</a>
-        <a href="tel:+1234567890" class="btn-secondary">
-          <i class="fas fa-phone"></i> Call Us
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Cards -->
+        <a href="/apps.html#echohamm" class="group rounded-2xl border border-white/5 p-5 bg-card hover:bg-card/90">
+          <h3 class="font-semibold">EchoHamm</h3>
+          <p class="mt-2 text-sm text-muted">Modern shopping experience with curated drops, discounts, and fast checkout.</p>
+          <span class="mt-4 inline-block text-xs text-accent group-hover:underline">Learn more</span>
+        </a>
+        <a href="/apps.html#alameer" class="group rounded-2xl border border-white/5 p-5 bg-card hover:bg-card/90">
+          <h3 class="font-semibold">Alameer Hydraulics</h3>
+          <p class="mt-2 text-sm text-muted">Parts catalog & order management for heavy‑equipment hydraulics.</p>
+          <span class="mt-4 inline-block text-xs text-accent group-hover:underline">Learn more</span>
+        </a>
+        <a href="/apps.html#vetapp" class="group rounded-2xl border border-white/5 p-5 bg-card hover:bg-card/90">
+          <h3 class="font-semibold">Vetapp</h3>
+          <p class="mt-2 text-sm text-muted">Clinic management — clients, pets, visits, medicines, and invoices.</p>
+          <span class="mt-4 inline-block text-xs text-accent group-hover:underline">Learn more</span>
+        </a>
+        <a href="/apps.html#anonpulse" class="group rounded-2xl border border-white/5 p-5 bg-card hover:bg-card/90">
+          <h3 class="font-semibold">AnonPulse</h3>
+          <p class="mt-2 text-sm text-muted">Anonymous confessions with moderation, categories, and rich interactions.</p>
+          <span class="mt-4 inline-block text-xs text-accent group-hover:underline">Learn more</span>
         </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <div class="footer-container">
-      <div class="footer-logo">
-        <img src="assets/logo.png" alt="H1APPS Logo" />
-        <p>Professional Mobile App Development</p>
+    <!-- CTA -->
+    <section class="max-w-6xl mx-auto px-4 py-16">
+      <div class="rounded-2xl bg-gradient-to-r from-accents/30 to-accent/20 p-8 border border-white/5">
+        <div class="md:flex items-center justify-between gap-6">
+          <div>
+            <h3 class="text-xl md:text-2xl font-semibold">Have a feature in mind?</h3>
+            <p class="text-sm text-muted mt-2 max-w-prose">Tell us what you want to build. We’ll design, develop, and launch it fast — with attention to detail.</p>
+          </div>
+          <a href="mailto:info@h1apps.xyz" class="mt-4 md:mt-0 inline-block px-6 py-3 rounded-xl bg-accent hover:bg-accents font-semibold">Contact us</a>
+        </div>
       </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
+    </section>
+  </main>
+
+  <footer class="mt-20 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-3">
+          <img src="/assets/logo.jpeg" alt="H1APPS logo" class="w-8 h-8">
+          <span class="font-semibold">H1APPS</span>
+        </div>
+        <p class="mt-3 text-sm text-muted">Cross‑platform app development studio delivering custom solutions for businesses and creators.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3">Company</h4>
+        <ul class="space-y-2 text-sm text-muted">
+          <li><a class="hover:text-textp" href="/about.html">About</a></li>
+          <li><a class="hover:text-textp" href="/apps.html">Apps</a></li>
+          <li><a class="hover:text-textp" href="mailto:info@h1apps.xyz">Contact</a></li>
         </ul>
       </div>
-      <div class="footer-contact">
-        <h4>Contact Info</h4>
-        <ul>
-          <li><i class="fas fa-envelope"></i> info@h1apps.xyz</li>
-          <li><i class="fas fa-phone"></i> +123 456 7890</li>
-          <li><i class="fas fa-map-marker-alt"></i> Palestine</li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <h4>Follow Us</h4>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <div>
+        <h4 class="font-semibold mb-3">Get in touch</h4>
+        <p class="text-sm text-muted">info@h1apps.xyz</p>
+        <div class="mt-2 flex gap-3">
+          <a class="text-sm hover:text-textp" href="https://instagram.com/h1mmam" target="_blank" rel="noopener">Instagram</a>
+          <a class="text-sm hover:text-textp" href="#" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 H1APPS. All rights reserved.</p>
-    </div>
+    <div class="text-center text-xs text-muted pb-8">© 2025 H1APPS. All rights reserved.</div>
   </footer>
-
-  <script src="js/script.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
