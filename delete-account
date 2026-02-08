@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>طلب حذف الحساب — H1 Checkbook</title>
+  <meta name="description" content="صفحة طلب حذف الحساب وحذف البيانات لتطبيق H1 Checkbook." />
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; margin:0; background:#0F172A; color:#E2E8F0;}
+    .wrap{max-width:860px; margin:0 auto; padding:28px 18px;}
+    .card{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:18px; padding:18px;}
+    h1{margin:0 0 8px; font-size:22px;}
+    p,li{line-height:1.7; color:#CBD5E1;}
+    .muted{color:#94A3B8; font-size:13px;}
+    .grid{display:grid; grid-template-columns:1fr; gap:14px;}
+    @media(min-width:860px){ .grid{grid-template-columns:1.2fr .8fr;} }
+    label{display:block; margin:10px 0 6px; font-weight:600; color:#E2E8F0;}
+    input,textarea,select{width:100%; box-sizing:border-box; padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,.14);
+      background:rgba(2,6,23,.55); color:#E2E8F0; outline:none;}
+    textarea{min-height:120px; resize:vertical;}
+    .btn{display:inline-block; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.16);
+      background:linear-gradient(90deg, rgba(99,102,241,.85), rgba(139,92,246,.85)); color:white; font-weight:700; cursor:pointer;}
+    .note{background:rgba(16,185,129,.12); border:1px solid rgba(16,185,129,.25); padding:12px; border-radius:14px;}
+    .warn{background:rgba(245,158,11,.12); border:1px solid rgba(245,158,11,.25); padding:12px; border-radius:14px;}
+    a{color:#93C5FD;}
+    .small{font-size:14px;}
+    code{background:rgba(255,255,255,.08); padding:2px 6px; border-radius:8px;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>طلب حذف الحساب — H1 Checkbook</h1>
+      <p class="muted">آخر تحديث: <span id="d"></span></p>
+      <p>
+        إذا بدك تحذف حسابك و/أو بياناتك من تطبيق <strong>H1 Checkbook</strong>،
+        عبّي الطلب من النموذج تحت. رح نراجع الطلب ونحذف البيانات خلال مدة أقصاها <strong>30 يوم</strong>.
+      </p>
+    </div>
+
+    <div style="height:14px"></div>
+
+    <div class="grid">
+      <!-- FORM -->
+      <div class="card">
+        <h2 style="margin:0 0 10px; font-size:18px;">نموذج طلب الحذف</h2>
+
+        <!--
+          ✅ مهم:
+          هذا النموذج "واجهة" فقط.
+          لازم تربطه بوجهة استقبال:
+          - Google Form / Formspree / أو API عندك.
+          إذا ما بدك تربط شي الآن، خلّيه mailto.
+        -->
+
+        <form action="mailto:support@h1apps.xyz" method="post" enctype="text/plain">
+          <label for="app">التطبيق</label>
+          <select id="app" name="app">
+            <option value="H1 Checkbook" selected>H1 Checkbook</option>
+          </select>
+
+          <label for="email">الإيميل المسجّل بالحساب (مطلوب)</label>
+          <input id="email" name="email" type="email" placeholder="name@example.com" required />
+
+          <label for="uid">UID (اختياري — إذا بتعرفه)</label>
+          <input id="uid" name="uid" type="text" placeholder="مثال: q1w2e3r4t5y6..." />
+
+          <label for="reason">سبب الطلب (اختياري)</label>
+          <input id="reason" name="reason" type="text" placeholder="مثال: ما عدت أستخدم التطبيق" />
+
+          <label for="scope">شو بدك نحذف؟</label>
+          <select id="scope" name="delete_scope">
+            <option value="account_and_data" selected>حذف الحساب + كل البيانات</option>
+            <option value="data_only">حذف البيانات فقط (بدون حذف الحساب)</option>
+          </select>
+
+          <label for="note">ملاحظات إضافية (اختياري)</label>
+          <textarea id="note" name="note" placeholder="اكتب أي تفاصيل بتساعدنا نتأكد إنه الحساب إلك"></textarea>
+
+          <div style="height:12px"></div>
+          <button class="btn" type="submit">إرسال طلب الحذف</button>
+
+          <p class="muted small" style="margin-top:10px;">
+            إذا ما فتح الإيميل تلقائيًا، ابعت لنا يدويًا على:
+            <a href="mailto:support@h1apps.xyz">support@h1apps.xyz</a>
+            وحط بالعنوان: <code>Delete Account Request</code>
+          </p>
+        </form>
+      </div>
+
+      <!-- INFO -->
+      <div class="card">
+        <h2 style="margin:0 0 10px; font-size:18px;">شو بينحذف؟</h2>
+
+        <div class="note">
+          <p style="margin:0;">
+            عند طلب <strong>حذف الحساب + البيانات</strong>، عادةً بنحذف:
+          </p>
+          <ul style="margin:8px 0 0;">
+            <li>بيانات الحساب (مثل الإيميل/المعرّف داخل النظام)</li>
+            <li>السجلات التي أنشأتها داخل التطبيق (مثل الشيكات/المدفوعات… حسب تطبيقك)</li>
+            <li>إعدادات التطبيق المرتبطة بالحساب</li>
+          </ul>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="warn">
+          <p style="margin:0;">
+            <strong>ملاحظة:</strong> قد نحتفظ بحد أدنى من البيانات إذا كان مطلوب قانونيًا
+            (مثلاً لأغراض منع الاحتيال/الامتثال) ولمدة محدودة.
+          </p>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <p class="muted small">
+          للخصوصية: راجع سياسة الخصوصية على موقعنا أو داخل التطبيق.
+        </p>
+
+        <hr style="border:none; border-top:1px solid rgba(255,255,255,.12); margin:14px 0;">
+
+        <p class="small" style="margin:0;">
+          للتواصل: <a href="mailto:support@h1apps.xyz">support@h1apps.xyz</a>
+        </p>
+      </div>
+    </div>
+
+    <div style="height:14px"></div>
+
+    <div class="card">
+      <h2 style="margin:0 0 10px; font-size:18px;">طريقة أسرع داخل التطبيق (اختياري)</h2>
+      <p class="muted small" style="margin:0;">
+        إذا عندك زر داخل التطبيق: <code>Settings → Delete Account</code>، المستخدم يقدر يطلب الحذف من هناك.
+        (مو شرط، بس ممتاز لموافقة Google/Apple.)
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // تاريخ تلقائي
+    document.getElementById('d').textContent = new Date().toISOString().slice(0,10);
+  </script>
+</body>
+</html>
