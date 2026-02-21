@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>محلات الأمير | الفروع</title>
+
+  <style>
+    :root{
+      --bg0:#070b14;
+      --bg1:#0b1430;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.09);
+      --text:#eaf0ff;
+      --muted:rgba(234,240,255,.75);
+      --line:rgba(255,255,255,.12);
+      --brand:#5aa7ff;
+      --ok:#2ee59d;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans Arabic", "Helvetica Neue", Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(90,167,255,.25), transparent 60%),
+        radial-gradient(900px 600px at 90% 0%, rgba(46,229,157,.14), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1) 70%, #060912);
+      min-height:100vh;
+    }
+
+    .wrap{
+      width:min(1180px, 92vw);
+      margin:0 auto;
+      padding:48px 0 56px;
+      position:relative;
+    }
+
+    /* Watermark */
+    .watermark{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        url("./assets/alameer/brand/logo-watermark.png") center/720px no-repeat;
+      opacity:.06;
+      filter: saturate(1.1) contrast(1.05);
+      mix-blend-mode: screen;
+    }
+
+    header{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      justify-content:space-between;
+      padding:18px 18px 14px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+
+    .brand .mark{
+      width:44px; height:44px;
+      border-radius:12px;
+      background: radial-gradient(circle at 30% 25%, rgba(90,167,255,.9), rgba(90,167,255,.12));
+      border:1px solid rgba(255,255,255,.16);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+    }
+    .brand .mark img{
+      width:34px; height:34px;
+      object-fit:contain;
+      opacity:.95;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(22px, 2.3vw, 30px);
+      letter-spacing:.2px;
+      line-height:1.2;
+    }
+    .sub{
+      margin-top:6px;
+      color:var(--muted);
+      font-size: 14px;
+    }
+
+    .meta{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      align-items:flex-end;
+    }
+
+    .pill{
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:12px;
+      color:var(--muted);
+      background: rgba(255,255,255,.04);
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .grid{
+      margin-top:22px;
+      display:grid;
+      gap:18px;
+    }
+
+    .section{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background: rgba(255,255,255,.03);
+      box-shadow: 0 10px 36px rgba(0,0,0,.25);
+      overflow:hidden;
+    }
+    .section-head{
+      padding:16px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-bottom:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    }
+    .section-head h2{
+      margin:0;
+      font-size:16px;
+      color: rgba(234,240,255,.92);
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .count{
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .cards{
+      padding:18px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:16px;
+    }
+
+    .card{
+      grid-column: span 6;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      overflow:hidden;
+      box-shadow: 0 12px 34px rgba(0,0,0,.28);
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(90,167,255,.45);
+      background: linear-gradient(180deg, rgba(90,167,255,.10), rgba(255,255,255,.03));
+    }
+
+    .thumb{
+      position:relative;
+      height: 180px;
+      background: rgba(255,255,255,.06);
+    }
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter: saturate(1.05) contrast(1.05);
+    }
+    .thumb::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,.55));
+    }
+
+    .card-body{
+      padding:14px 14px 12px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .title-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .branch-name{
+      font-size:15px;
+      margin:0;
+      color: rgba(234,240,255,.95);
+    }
+
+    .btn{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      justify-content:center;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      text-decoration:none;
+      font-size:13px;
+      transition: background .15s ease, transform .15s ease, border-color .15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{ background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.22); transform: translateY(-1px); }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .icon-actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .icon-btn{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      display:grid;
+      place-items:center;
+      text-decoration:none;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .icon-btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(90,167,255,.35); }
+
+    .hint{
+      color: var(--muted);
+      font-size:12px;
+      line-height:1.5;
+      margin:0;
+    }
+
+    footer{
+      margin-top:18px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background: rgba(255,255,255,.03);
+      box-shadow: 0 10px 36px rgba(0,0,0,.25);
+      overflow:hidden;
+    }
+    .footer-head{
+      padding:16px 18px;
+      border-bottom:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .footer-head h3{ margin:0; font-size:15px; }
+    .staff{
+      padding:18px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .person{
+      grid-column: span 4;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background: rgba(255,255,255,.05);
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .person .name{ font-weight:700; font-size:14px; }
+    .person .role{ color:var(--muted); font-size:12px; }
+    .person .p-actions{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+
+    .small{
+      font-size:12px;
+      color:var(--muted);
+      padding:14px 18px 18px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .card{ grid-column: span 12; }
+      .person{ grid-column: span 12; }
+      header{ flex-direction:column; align-items:flex-start; }
+      .meta{ align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="watermark" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="mark">
+          <!-- اختياري: حط لوجو صغير هون -->
+          <img src="./assets/alameer/brand/logo-watermark.png" alt="Alameer Logo">
+        </div>
+        <div>
+          <h1>فروع محلات الأمير</h1>
+          <div class="sub">اختر الفرع لفتح الموقع على الخريطة — واتساب واتصال مباشر</div>
+        </div>
+      </div>
+
+      <div class="meta">
+        <div class="pill">
+          <!-- أيقونة بسيطة -->
+          <span>📍</span>
+          <span>آخر تحديث: <strong id="lastUpdated">اليوم</strong></span>
+        </div>
+        <div class="pill">
+          <span>☎️</span>
+          <span>خدمة العملاء: <strong id="mainPhone">+970000000000</strong></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid" id="content"></main>
+
+    <footer>
+      <div class="footer-head">
+        <h3>المسؤولون</h3>
+        <span class="count">أرقام مباشرة للتواصل</span>
+      </div>
+      <div class="staff" id="staff"></div>
+      <div class="small">© <span id="year"></span> محلات الأمير — جميع الحقوق محفوظة</div>
+    </footer>
+  </div>
+
+  <script>
+    // =========================
+    // DATA: غيّر كل شيء من هون
+    // =========================
+
+    // رقم رئيسي يظهر أعلى الصفحة
+    const MAIN_PHONE = "+970000000000";
+
+    // آخر تحديث نصي
+    const LAST_UPDATED = "21-02-2026";
+
+    // أقسام الفروع
+    const SECTIONS = [
+      {
+        title: "فروع فلسطين",
+        branches: [
+          {
+            name: "نابلس",
+            image: "./assets/alameer/branches/nablus.jpg",
+            mapsUrl: "https://maps.google.com/?q=31.0,35.0", // غيّرها لرابط اللوكيشن الحقيقي
+            phone: "+970000000001",
+            whatsapp: "+970000000001"
+          },
+          {
+            name: "رام الله",
+            image: "./assets/alameer/branches/ramallah.jpg",
+            mapsUrl: "https://maps.google.com/?q=31.0,35.0",
+            phone: "+970000000002",
+            whatsapp: "+970000000002"
+          },
+          {
+            name: "جماعين",
+            image: "./assets/alameer/branches/jamain.jpg",
+            mapsUrl: "https://maps.google.com/?q=31.0,35.0",
+            phone: "+970000000003",
+            whatsapp: "+970000000003"
+          },
+          {
+            name: "روجـيب",
+            image: "./assets/alameer/branches/rujeib.jpg",
+            mapsUrl: "https://maps.google.com/?q=31.0,35.0",
+            phone: "+970000000004",
+            whatsapp: "+970000000004"
+          },
+        ]
+      },
+      {
+        title: "فروع الأردن",
+        branches: [
+          {
+            name: "الأردن - فرع 1",
+            image: "./assets/alameer/branches/jordan-1.jpg",
+            mapsUrl: "https://maps.google.com/?q=31.0,35.0",
+            phone: "+962000000001",
+            whatsapp: "+962000000001"
+          },
+          {
+            name: "الأردن - فرع 2",
+            image: "./assets/alameer/branches/jordan-2.jpg",
+            mapsUrl: "https://maps.google.com/?q=31.0,35.0",
+            phone: "+962000000002",
+            whatsapp: "+962000000002"
+          },
+        ]
+      },
+      {
+        title: "فرع مصر",
+        branches: [
+          {
+            name: "مصر - القاهرة",
+            image: "./assets/alameer/branches/egypt.jpg",
+            mapsUrl: "https://maps.google.com/?q=30.0,31.0",
+            phone: "+200000000001",
+            whatsapp: "+200000000001"
+          },
+        ]
+      }
+    ];
+
+    // المسؤولون آخر الصفحة
+    const STAFF = [
+      { name: "اسم المسؤول 1", role: "مدير عام", phone: "+970000000010", whatsapp: "+970000000010" },
+      { name: "اسم المسؤول 2", role: "مسؤول فروع فلسطين", phone: "+970000000011", whatsapp: "+970000000011" },
+      { name: "اسم المسؤول 3", role: "مسؤول الأردن", phone: "+962000000011", whatsapp: "+962000000011" },
+      { name: "اسم المسؤول 4", role: "مسؤول مصر", phone: "+200000000011", whatsapp: "+200000000011" },
+    ];
+
+    // =========================
+    // Helpers
+    // =========================
+    const waLink = (phone) => {
+      // استخدم أرقام بصيغة دولية بدون مسافات
+      const p = (phone || "").replace(/[^\d+]/g, "");
+      // wa.me يتطلب بدون + عادةً
+      const wa = p.startsWith("+") ? p.slice(1) : p;
+      return `https://wa.me/${wa}`;
+    };
+
+    const telLink = (phone) => {
+      const p = (phone || "").replace(/[^\d+]/g, "");
+      return `tel:${p}`;
+    };
+
+    const svgPhone = `
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1 .4 2 .6 3.1.6.7 0 1.2.5 1.2 1.2V20c0 .7-.5 1.2-1.2 1.2C10.6 21.2 2.8 13.4 2.8 3.6 2.8 2.9 3.3 2.4 4 2.4h3.4c.7 0 1.2.5 1.2 1.2 0 1.1.2 2.1.6 3.1.1.4 0 .9-.2 1.2L6.6 10.8Z" fill="rgba(234,240,255,.92)"/>
+      </svg>
+    `;
+
+    const svgWhats = `
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M20 11.9c0 4.5-3.7 8.1-8.2 8.1-1.4 0-2.7-.3-3.9-.9L4 20l.9-3.6c-.7-1.2-1.1-2.6-1.1-4.1C3.8 7.8 7.5 4.2 12 4.2c4.5 0 8 3.3 8 7.7Z" stroke="rgba(234,240,255,.92)" stroke-width="1.4"/>
+        <path d="M10 9.3c.2-.3.3-.3.5-.3h.4c.2 0 .4 0 .5.4l.7 1.6c.1.3.1.5-.1.7l-.3.4c-.1.2-.2.3 0 .6.2.3.8 1.2 1.7 1.8.8.6 1.4.8 1.7.9.2.1.4 0 .5-.2l.5-.6c.2-.2.4-.2.7-.1l1.4.7c.3.2.4.3.4.5 0 .2-.1.9-.6 1.2-.5.3-1.1.4-1.5.3-.4-.1-1.8-.6-3.2-1.8-1.4-1.2-2.3-2.7-2.5-3.1-.2-.4-.6-1.3-.5-2 0-.7.4-1.1.6-1.4Z" fill="rgba(46,229,157,.95)"/>
+      </svg>
+    `;
+
+    function branchCard(b){
+      return `
+        <article class="card">
+          <div class="thumb">
+            <img src="${b.image}" alt="فرع ${b.name}" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="title-row">
+              <h3 class="branch-name">${b.name}</h3>
+              <a class="btn" href="${b.mapsUrl}" target="_blank" rel="noopener">فتح الموقع على الخريطة</a>
+            </div>
+
+            <div class="actions">
+              <p class="hint">اضغط للخريطة، أو تواصل مباشرة بالاتصال/واتساب.</p>
+              <div class="icon-actions">
+                <a class="icon-btn" href="${telLink(b.phone)}" title="اتصال">
+                  ${svgPhone}
+                </a>
+                <a class="icon-btn" href="${waLink(b.whatsapp)}" target="_blank" rel="noopener" title="واتساب">
+                  ${svgWhats}
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function sectionBlock(section){
+      const cards = section.branches.map(branchCard).join("");
+      return `
+        <section class="section">
+          <div class="section-head">
+            <h2>📌 ${section.title}</h2>
+            <div class="count">${section.branches.length} فروع</div>
+          </div>
+          <div class="cards">
+            ${cards}
+          </div>
+        </section>
+      `;
+    }
+
+    function staffCard(p){
+      return `
+        <div class="person">
+          <div>
+            <div class="name">${p.name}</div>
+            <div class="role">${p.role}</div>
+          </div>
+          <div class="p-actions">
+            <a class="btn" href="${telLink(p.phone)}">اتصال</a>
+            <a class="btn" href="${waLink(p.whatsapp)}" target="_blank" rel="noopener">واتساب</a>
+          </div>
+          <div class="hint">${p.phone}</div>
+        </div>
+      `;
+    }
+
+    // Render
+    document.getElementById("mainPhone").textContent = MAIN_PHONE;
+    document.getElementById("lastUpdated").textContent = LAST_UPDATED;
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("content").innerHTML = SECTIONS.map(sectionBlock).join("");
+    document.getElementById("staff").innerHTML = STAFF.map(staffCard).join("");
+  </script>
+</body>
+</html>
