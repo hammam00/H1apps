@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>خلاصة | سياسة الخصوصية والشروط</title>
+  <style>
+    :root {
+      --dark-green: #1D3B2C;
+      --deep-green: #314835;
+      --sage-green: #6F8B71;
+      --soft-olive: #9DA890;
+      --cream: #EBE3CE;
+      --warm-beige: #D4CBB4;
+      --wood-brown: #8C8A73;
+      --text-dark: #203328;
+      --text-light: #F8F6EF;
+      --card-light: #F5F0E3;
+      --border: #B8B29F;
+      --shadow: rgba(29, 59, 44, 0.10);
+      --danger: #B85C5C;
+      --success: #4F7C5A;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(111, 139, 113, 0.16), transparent 32%),
+        linear-gradient(180deg, var(--cream) 0%, #efe9d9 100%);
+      color: var(--text-dark);
+      line-height: 1.85;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 32px 18px 60px;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--dark-green), var(--deep-green));
+      color: var(--text-light);
+      border-radius: 32px;
+      padding: 34px 26px;
+      box-shadow: 0 18px 40px var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      filter: blur(2px);
+    }
+
+    .hero::before {
+      width: 220px;
+      height: 220px;
+      top: -90px;
+      left: -50px;
+    }
+
+    .hero::after {
+      width: 180px;
+      height: 180px;
+      bottom: -70px;
+      right: -30px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--text-light);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(4px);
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.2;
+      margin-bottom: 10px;
+      letter-spacing: -0.4px;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      color: rgba(248, 246, 239, 0.88);
+      font-size: 15px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .meta-chip {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-light);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: 0 12px 30px var(--shadow);
+      overflow: hidden;
+    }
+
+    .card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 22px 22px 18px;
+      background: linear-gradient(180deg, rgba(212, 203, 180, 0.38), rgba(245, 240, 227, 0.5));
+      border-bottom: 1px solid rgba(184,178,159,0.65);
+    }
+
+    .card-head h2 {
+      font-size: 24px;
+      color: var(--dark-green);
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .pill.green {
+      background: rgba(79, 124, 90, 0.12);
+      color: var(--success);
+      border: 1px solid rgba(79, 124, 90, 0.18);
+    }
+
+    .pill.olive {
+      background: rgba(157, 168, 144, 0.18);
+      color: var(--deep-green);
+      border: 1px solid rgba(111, 139, 113, 0.20);
+    }
+
+    .content {
+      padding: 22px;
+    }
+
+    .intro {
+      background: rgba(255,255,255,0.46);
+      border: 1px solid rgba(184,178,159,0.62);
+      border-radius: 20px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+    }
+
+    .section {
+      padding: 16px 0;
+      border-bottom: 1px dashed rgba(184,178,159,0.72);
+    }
+
+    .section:last-child {
+      border-bottom: 0;
+      padding-bottom: 4px;
+    }
+
+    .section h3 {
+      font-size: 18px;
+      color: var(--deep-green);
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 15px;
+      color: var(--text-dark);
+    }
+
+    .section ul {
+      margin-top: 10px;
+      padding-right: 18px;
+    }
+
+    .section li {
+      margin-bottom: 8px;
+    }
+
+    .note {
+      margin-top: 18px;
+      background: rgba(157, 168, 144, 0.16);
+      border: 1px solid rgba(111, 139, 113, 0.18);
+      color: var(--text-dark);
+      border-radius: 18px;
+      padding: 14px 16px;
+      font-size: 14px;
+    }
+
+    .footer {
+      margin-top: 26px;
+      text-align: center;
+      color: rgba(32, 51, 40, 0.72);
+      font-size: 13px;
+    }
+
+    .footer strong {
+      color: var(--dark-green);
+    }
+
+    @media (min-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        padding: 42px 34px;
+      }
+
+      .content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="container">
+      <section class="hero">
+        <div class="badge">خلاصة • Kholasa</div>
+        <h1>سياسة الخصوصية وشروط الاستخدام</h1>
+        <p class="subtitle">
+          يوضح هذا المستند طريقة تعامل تطبيق <strong>خلاصة</strong> مع بيانات المستخدمين، إلى جانب القواعد والشروط العامة لاستخدام التطبيق وخدماته التعليمية.
+        </p>
+        <div class="meta">
+          <span class="meta-chip">إدارة التطبيق: طلاب كلية تكنولوجيا المعلومات - خضوري</span>
+          <span class="meta-chip">التنفيذ التقني: h1apps</span>
+          <span class="meta-chip">آخر تحديث: يتم تخصيصه لاحقاً</span>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <div class="card-head">
+            <h2>سياسة الخصوصية</h2>
+            <span class="pill green">خصوصية</span>
+          </div>
+          <div class="content">
+            <div class="intro">
+              نحن نحترم خصوصية المستخدم، ونعمل على جمع الحد الأدنى من البيانات اللازمة لتقديم تجربة آمنة ومنظمة داخل التطبيق.
+            </div>
+
+            <div class="section">
+              <h3>1. البيانات التي قد نجمعها</h3>
+              <p>قد يجمع التطبيق بيانات أساسية مثل الاسم، البريد الإلكتروني، الصورة الشخصية، وبيانات تسجيل الدخول، إضافة إلى بعض البيانات التعليمية أو التفاعلية داخل التطبيق مثل المفضلة، الجداول، أو النشاط المرتبط باستخدام الخدمات.</p>
+            </div>
+
+            <div class="section">
+              <h3>2. استخدام البيانات</h3>
+              <ul>
+                <li>إنشاء حساب المستخدم وتسجيل الدخول.</li>
+                <li>تخصيص المحتوى والميزات التعليمية داخل التطبيق.</li>
+                <li>تحسين جودة الخدمة، الأداء، وتجربة الاستخدام.</li>
+                <li>إرسال إشعارات مرتبطة بالخدمة عند الحاجة.</li>
+              </ul>
+            </div>
+
+            <div class="section">
+              <h3>3. حماية البيانات</h3>
+              <p>نعتمد وسائل تقنية وتنظيمية مناسبة لحماية البيانات من الوصول غير المصرح به أو التعديل أو الفقدان، مع الالتزام بأفضل الممارسات المتاحة في بنية التطبيق.</p>
+            </div>
+
+            <div class="section">
+              <h3>4. مشاركة البيانات</h3>
+              <p>لا يتم بيع بيانات المستخدمين أو مشاركتها مع أطراف خارجية لأغراض تجارية. وقد يتم استخدام خدمات تقنية داعمة للتطبيق فقط بما يخدم تشغيل الخدمة بشكل آمن وفعّال.</p>
+            </div>
+
+            <div class="section">
+              <h3>5. حقوق المستخدم</h3>
+              <p>يمكن للمستخدم طلب تحديث بياناته أو تعديلها أو حذفها وفق السياسات المعتمدة داخل التطبيق، وبما لا يتعارض مع المتطلبات التقنية أو التنظيمية اللازمة لتشغيل الخدمة.</p>
+            </div>
+
+            <div class="note">
+              يُنصح بتخصيص هذا النص لاحقاً إذا تم إضافة ميزات مثل التحليلات المتقدمة، الإعلانات، أو مشاركة البيانات مع جهات خارجية محددة.
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h2>شروط الاستخدام</h2>
+            <span class="pill olive">شروط</span>
+          </div>
+          <div class="content">
+            <div class="intro">
+              باستخدامك لتطبيق <strong>خلاصة</strong>، فإنك توافق على الالتزام بالشروط التالية، والتي تهدف إلى ضمان بيئة تعليمية محترمة وآمنة لجميع المستخدمين.
+            </div>
+
+            <div class="section">
+              <h3>1. الاستخدام المشروع</h3>
+              <p>يُستخدم التطبيق للأغراض التعليمية والتنظيمية فقط، ويُمنع استخدامه بطريقة تسيء للآخرين أو تضر بالبنية التقنية أو تنتهك القوانين والأنظمة المعمول بها.</p>
+            </div>
+
+            <div class="section">
+              <h3>2. مسؤولية المحتوى</h3>
+              <p>يلتزم المستخدم بعدم رفع أو مشاركة محتوى مخالف، مسيء، مضلل، أو ينتهك حقوق الملكية الفكرية أو حقوق الآخرين بأي شكل من الأشكال.</p>
+            </div>
+
+            <div class="section">
+              <h3>3. الحسابات والصلاحيات</h3>
+              <ul>
+                <li>المستخدم مسؤول عن صحة البيانات التي يقدمها.</li>
+                <li>يُمنع انتحال الهوية أو إساءة استخدام الحسابات.</li>
+                <li>قد يتم تقييد أو إيقاف الحسابات المخالفة حسب الضرورة.</li>
+              </ul>
+            </div>
+
+            <div class="section">
+              <h3>4. التعديلات والتحديثات</h3>
+              <p>يحق لإدارة التطبيق تعديل المزايا، المحتوى، الشروط، أو إيقاف بعض الخدمات أو تحديثها في أي وقت بما يخدم مصلحة المستخدمين وتطوير الخدمة.</p>
+            </div>
+
+            <div class="section">
+              <h3>5. حدود المسؤولية</h3>
+              <p>يبذل فريق التطبيق جهداً معقولاً لتقديم خدمة مستقرة ومفيدة، لكن لا يُضمن خلو الخدمة من الانقطاع المؤقت أو الأخطاء التقنية بشكل كامل.</p>
+            </div>
+
+            <div class="note">
+              يُفضل إضافة بنود أكثر تفصيلاً إذا كان التطبيق سيتضمن رفع ملفات، إدارة لجان، نشر محتوى من مستخدمين، أو سياسات أكاديمية معتمدة.
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <p class="footer">
+        هذا المستند مخصص لتطبيق <strong>خلاصة</strong>، ويُنصح بمراجعته قانونياً أو إدارياً قبل نشره بصيغته النهائية داخل التطبيق أو على الموقع الرسمي.
+      </p>
+    </div>
+  </main>
+</body>
+</html>
