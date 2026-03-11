@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kholasa Legal | الشروط والأحكام وسياسة الخصوصية</title>
+  <meta name="description" content="Kholasa legal page including Privacy Policy and Terms & Conditions in Arabic and English." />
+  <style>
+    :root{
+      --darkGreen:#1D3B2C;
+      --deepGreen:#314835;
+      --sageGreen:#6F8B71;
+      --softOlive:#9DA890;
+      --cream:#EBE3CE;
+      --warmBeige:#D4CBB4;
+      --cardLight:#F7F2E6;
+      --textDark:#203328;
+      --textLight:#F8F7F2;
+      --danger:#B65252;
+      --border:rgba(32, 51, 40, 0.10);
+      --shadow:0 10px 30px rgba(29,59,44,.10);
+      --shadow-soft:0 6px 18px rgba(29,59,44,.08);
+      --radius-xl:28px;
+      --radius-lg:20px;
+      --radius-md:16px;
+      --radius-sm:12px;
+      --transition:220ms ease;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans Arabic","Noto Sans",Tahoma,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(157,168,144,.22), transparent 22%),
+        radial-gradient(circle at top left, rgba(111,139,113,.12), transparent 18%),
+        var(--cream);
+      color:var(--textDark);
+      min-height:100vh;
+      line-height:1.8;
+    }
+
+    .page{
+      max-width:1200px;
+      margin:0 auto;
+      padding:24px 16px 44px;
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:32px;
+      background:linear-gradient(135deg, var(--darkGreen), var(--deepGreen));
+      color:var(--textLight);
+      padding:28px 22px;
+      box-shadow:var(--shadow);
+      isolation:isolate;
+    }
+
+    .hero::before,
+    .hero::after{
+      content:"";
+      position:absolute;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      z-index:-1;
+      filter:blur(2px);
+    }
+    .hero::before{
+      width:300px;height:300px;top:-120px;left:-80px;
+    }
+    .hero::after{
+      width:240px;height:240px;bottom:-120px;right:-80px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, rgba(255,255,255,.20), rgba(255,255,255,.10));
+      border:1px solid rgba(255,255,255,.15);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.18);
+      font-size:28px;
+    }
+
+    .brand-text h1{
+      margin:0;
+      font-size:clamp(1.5rem, 2.4vw, 2.2rem);
+      line-height:1.2;
+      letter-spacing:.2px;
+    }
+    .brand-text p{
+      margin:6px 0 0;
+      color:rgba(248,247,242,.85);
+      font-size:.97rem;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.35fr .95fr;
+      gap:18px;
+      align-items:end;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:22px;
+      padding:16px 18px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card strong{
+      display:block;
+      font-size:1rem;
+      margin-bottom:4px;
+    }
+
+    .hero-card span{
+      color:rgba(248,247,242,.84);
+      font-size:.95rem;
+    }
+
+    .controls{
+      margin-top:18px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .segmented{
+      display:inline-flex;
+      gap:8px;
+      padding:8px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:999px;
+      backdrop-filter: blur(10px);
+      flex-wrap:wrap;
+    }
+
+    .segmented button{
+      border:0;
+      background:transparent;
+      color:rgba(248,247,242,.88);
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:700;
+      cursor:pointer;
+      transition:var(--transition);
+      font-size:.95rem;
+    }
+
+    .segmented button.active{
+      background:var(--cream);
+      color:var(--textDark);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .utility{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .ghost-btn{
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.08);
+      color:var(--textLight);
+      padding:10px 14px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:700;
+      transition:var(--transition);
+      text-decoration:none;
+    }
+    .ghost-btn:hover{
+      background:rgba(255,255,255,.14);
+      transform:translateY(-1px);
+    }
+
+    .content-shell{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:300px 1fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .side-panel,
+    .content-panel{
+      background:rgba(247,242,230,.76);
+      border:1px solid var(--border);
+      border-radius:28px;
+      box-shadow:var(--shadow-soft);
+      backdrop-filter: blur(10px);
+    }
+
+    .side-panel{
+      padding:18px;
+      position:sticky;
+      top:18px;
+    }
+
+    .side-title{
+      font-size:1rem;
+      font-weight:800;
+      margin:0 0 10px;
+      color:var(--darkGreen);
+    }
+
+    .side-note{
+      margin:0 0 18px;
+      color:rgba(32,51,40,.75);
+      font-size:.94rem;
+      line-height:1.7;
+    }
+
+    .quick-list{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-bottom:16px;
+    }
+
+    .quick-link{
+      text-decoration:none;
+      color:var(--textDark);
+      background:var(--cardLight);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:12px 14px;
+      font-weight:700;
+      transition:var(--transition);
+    }
+    .quick-link:hover{
+      transform:translateY(-1px);
+      box-shadow:var(--shadow-soft);
+      border-color:rgba(49,72,53,.18);
+    }
+
+    .meta-card{
+      background:linear-gradient(180deg, rgba(111,139,113,.08), rgba(157,168,144,.05));
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:14px;
+    }
+    .meta-card p{
+      margin:6px 0;
+      font-size:.93rem;
+    }
+    .meta-card b{
+      color:var(--darkGreen);
+    }
+
+    .content-panel{
+      padding:18px;
+    }
+
+    .tab-panel{ display:none; }
+    .tab-panel.active{ display:block; }
+
+    .lang-panel{ display:none; }
+    .lang-panel.active{ display:block; }
+
+    .legal-card{
+      background:var(--cardLight);
+      border:1px solid var(--border);
+      border-radius:24px;
+      overflow:hidden;
+    }
+
+    .card-header{
+      padding:22px 22px 14px;
+      border-bottom:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(111,139,113,.10), rgba(111,139,113,.04));
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:.84rem;
+      font-weight:800;
+      color:var(--deepGreen);
+      background:rgba(111,139,113,.12);
+      border:1px solid rgba(49,72,53,.10);
+      padding:7px 12px;
+      border-radius:999px;
+      margin-bottom:12px;
+    }
+
+    .card-header h2{
+      margin:0;
+      font-size:clamp(1.35rem, 2.2vw, 1.9rem);
+      line-height:1.25;
+      color:var(--darkGreen);
+    }
+
+    .card-header .subtitle{
+      margin:10px 0 0;
+      color:rgba(32,51,40,.74);
+      font-size:.97rem;
+    }
+
+    .sections{
+      padding:8px;
+    }
+
+    .section{
+      padding:18px 14px;
+      border-bottom:1px dashed rgba(32,51,40,.10);
+    }
+
+    .section:last-child{ border-bottom:none; }
+
+    .section h3{
+      margin:0 0 10px;
+      font-size:1.05rem;
+      color:var(--darkGreen);
+    }
+
+    .section p{
+      margin:0 0 10px;
+      color:var(--textDark);
+    }
+
+    .section ul{
+      margin:0;
+      padding-inline-start:22px;
+    }
+
+    .section li{
+      margin:6px 0;
+    }
+
+    .footer{
+      margin-top:18px;
+      text-align:center;
+      color:rgba(32,51,40,.72);
+      font-size:.92rem;
+      padding:16px;
+    }
+
+    .badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .mini-badge{
+      background:rgba(29,59,44,.06);
+      border:1px solid var(--border);
+      color:var(--deepGreen);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.84rem;
+      font-weight:700;
+    }
+
+    .ltr{
+      direction:ltr;
+      text-align:left;
+    }
+
+    .rtl{
+      direction:rtl;
+      text-align:right;
+    }
+
+    a.inline-link{
+      color:var(--darkGreen);
+      font-weight:800;
+      text-decoration:none;
+      border-bottom:1px dashed rgba(29,59,44,.35);
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .content-shell{
+        grid-template-columns:1fr;
+      }
+      .side-panel{
+        position:static;
+      }
+    }
+
+    @media (max-width: 640px){
+      .page{ padding:14px 12px 28px; }
+      .hero{ padding:18px 16px; border-radius:24px; }
+      .content-panel,.side-panel{ border-radius:22px; }
+      .card-header{ padding:18px 16px 12px; }
+      .section{ padding:16px 10px; }
+      .controls{ align-items:flex-start; }
+    }
+
+    @media print{
+      body{ background:#fff; }
+      .hero,.side-panel,.utility,.controls .segmented:nth-child(2){ display:none !important; }
+      .content-shell{ display:block; }
+      .content-panel{ box-shadow:none; border:0; background:#fff; padding:0; }
+      .legal-card{ border:0; background:#fff; }
+      .tab-panel, .lang-panel{ display:block !important; }
+      .section{ break-inside:avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="brand">
+        <div class="logo">خ</div>
+        <div class="brand-text">
+          <h1>Kholasa Legal Center</h1>
+          <p>سياسة الخصوصية والشروط والأحكام بتصميم متناسق مع هوية تطبيق خلاصة</p>
+        </div>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-card">
+          <strong>جاهز للنشر مباشرة</strong>
+          <span>صفحة قانونية كاملة باللغتين العربية والإنجليزية، مع تبويبات للتنقل السريع ومظهر احترافي أنيق.</span>
+        </div>
+        <div class="hero-card">
+          <strong>Owner / المالك القانوني</strong>
+          <span>Hammam Aghbar — H1Apps<br>Contact: info@h1apps.xyz</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="segmented" id="docTabs" aria-label="Document tabs">
+          <button class="active" data-tab="privacy">سياسة الخصوصية</button>
+          <button data-tab="terms">الشروط والأحكام</button>
+        </div>
+
+        <div class="utility">
+          <div class="segmented" id="langTabs" aria-label="Language tabs">
+            <button class="active" data-lang="ar">العربية</button>
+            <button data-lang="en">English</button>
+          </div>
+          <button class="ghost-btn" onclick="window.print()">طباعة / Print</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="content-shell">
+      <aside class="side-panel">
+        <h2 class="side-title">معلومات سريعة</h2>
+        <p class="side-note">
+          هذه الصفحة تجمع الوثائق القانونية الأساسية لتطبيق <b>خلاصة</b> ضمن واجهة واحدة، مع دعم كامل للعربية والإنجليزية.
+        </p>
+
+        <div class="quick-list" id="quickNav">
+          <a class="quick-link" href="#privacy-top">الانتقال إلى سياسة الخصوصية</a>
+          <a class="quick-link" href="#terms-top">الانتقال إلى الشروط والأحكام</a>
+          <a class="quick-link" href="#contact-block">بيانات التواصل</a>
+        </div>
+
+        <div class="meta-card" id="contact-block">
+          <p><b>التطبيق:</b> خلاصة / Kholasa</p>
+          <p><b>المالك:</b> Hammam Aghbar</p>
+          <p><b>الشركة:</b> H1Apps</p>
+          <p><b>البريد:</b> <a class="inline-link" href="mailto:info@h1apps.xyz">info@h1apps.xyz</a></p>
+          <p><b>آخر تحديث:</b> March 2026 / مارس 2026</p>
+          <p><b>القانون المعمول به:</b> فلسطين</p>
+        </div>
+      </aside>
+
+      <section class="content-panel">
+        <!-- PRIVACY -->
+        <div class="tab-panel active" id="privacy">
+          <!-- Arabic -->
+          <div class="lang-panel active rtl" id="privacy-ar">
+            <article class="legal-card" id="privacy-top">
+              <div class="card-header">
+                <div class="eyebrow">🔒 سياسة الخصوصية</div>
+                <h2>سياسة الخصوصية — تطبيق خلاصة</h2>
+                <p class="subtitle">
+                  توضح هذه السياسة كيفية جمع البيانات واستخدامها وحمايتها عند استخدام تطبيق خلاصة.
+                </p>
+                <div class="badge-row">
+                  <span class="mini-badge">خلاصة / Kholasa</span>
+                  <span class="mini-badge">Hammam Aghbar</span>
+                  <span class="mini-badge">H1Apps</span>
+                  <span class="mini-badge">آخر تحديث: مارس 2026</span>
+                </div>
+              </div>
+
+              <div class="sections">
+                <section class="section">
+                  <h3>1. معلومات عامة</h3>
+                  <p>
+                    تطبيق <b>خلاصة (Kholasa)</b> هو تطبيق تعليمي وإنتاجي موجّه بشكل أساسي لطلاب الجامعات، وخاصة طلاب جامعة خضوري،
+                    ويوفر أدوات مثل الموارد الدراسية، الملخصات، تنظيم المواد، الجداول، الإشعارات، وبعض الأدوات المساندة للدراسة.
+                  </p>
+                  <p>
+                    التطبيق مملوك قانونيًا بواسطة <b>Hammam Aghbar</b> التابع لشركة <b>H1Apps</b>.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>2. من يمكنه استخدام التطبيق</h3>
+                  <p>
+                    يمكن استخدام بعض ميزات التطبيق دون إنشاء حساب، بينما تتطلب بعض الميزات الأخرى تسجيل الدخول.
+                  </p>
+                  <p>
+                    التطبيق متاح لأي مستخدم، رغم أنه مصمم بشكل أساسي لخدمة طلاب الجامعة.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>3. طرق تسجيل الدخول</h3>
+                  <p>عند رغبة المستخدم بإنشاء حساب أو تسجيل الدخول، يتم ذلك من خلال:</p>
+                  <ul>
+                    <li>تسجيل الدخول بواسطة Google</li>
+                    <li>تسجيل الدخول بواسطة Apple</li>
+                  </ul>
+                </section>
+
+                <section class="section">
+                  <h3>4. البيانات التي قد نقوم بجمعها</h3>
+                  <p>عند استخدام التطبيق أو تسجيل الدخول، قد نقوم بجمع أو تخزين بعض البيانات التالية:</p>
+                  <ul>
+                    <li>الاسم</li>
+                    <li>البريد الإلكتروني</li>
+                    <li>الصورة الشخصية أو صورة الحساب إن وُجدت</li>
+                    <li>الكلية</li>
+                    <li>التخصص</li>
+                    <li>السنة الدراسية</li>
+                    <li>المواد الدراسية المرتبطة بالمستخدم</li>
+                    <li>الجدول الدراسي</li>
+                    <li>النقاط داخل التطبيق</li>
+                    <li>الترتيب داخل لوحة الصدارة</li>
+                    <li>التفضيلات والإعدادات المرتبطة بالاستخدام</li>
+                    <li>بيانات تقنية وتشغيلية لازمة لتحسين التطبيق</li>
+                  </ul>
+                </section>
+
+                <section class="section">
+                  <h3>5. كيف نستخدم البيانات</h3>
+                  <p>قد يتم استخدام البيانات للأغراض التالية:</p>
+                  <ul>
+                    <li>إنشاء الحساب وإدارته</li>
+                    <li>تشغيل خصائص التطبيق وتخصيص التجربة</li>
+                    <li>عرض الجداول والمواد والمحتوى المناسب</li>
+                    <li>إرسال إشعارات مجدولة أو عادية مرتبطة بالتطبيق</li>
+                    <li>تحسين الأداء واكتشاف الأخطاء وتحسين تجربة المستخدم</li>
+                    <li>حماية المنصة ومنع إساءة الاستخدام</li>
+                  </ul>
+                </section>
+
+                <section class="section">
+                  <h3>6. المحتوى الموجود داخل التطبيق</h3>
+                  <p>
+                    المحتوى التعليمي داخل التطبيق مثل الملخصات وملفات PDF والصور والروابط يتم رفعه فقط من قبل الإدارة أو المشرفين.
+                  </p>
+                  <p>
+                    كما أن هذا المحتوى يخضع لمراجعة الإدارة قبل النشر. ولا يُسمح للمستخدم العادي بنشر أي محتوى داخل التطبيق.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>7. الإشعارات</h3>
+                  <p>
+                    قد يستخدم التطبيق إشعارات عادية أو مجدولة لتذكير المستخدمين بالمحتوى أو المواعيد أو الأنشطة المرتبطة بالاستخدام.
+                  </p>
+                  <p>
+                    يمكن للمستخدم التحكم في الإشعارات من خلال إعدادات الجهاز، وقد تتطلب بعض الميزات تفعيل الإشعارات لتعمل بشكل أفضل.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>8. الإعلانات</h3>
+                  <p>
+                    التطبيق لا يعرض إعلانات حاليًا، لكنه قد يضم إعلانات مستقبلًا لدعم التطوير والتشغيل. وفي حال إضافة الإعلانات،
+                    سيتم تحديث هذه السياسة عند الحاجة.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>9. البنية التقنية والتخزين</h3>
+                  <p>
+                    قد يتم تشغيل التطبيق باستخدام خدمات سحابية وتقنية، بما في ذلك:
+                  </p>
+                  <ul>
+                    <li>Firebase</li>
+                    <li>Cloud Firestore</li>
+                    <li>Firebase Storage</li>
+                  </ul>
+                  <p>
+                    وتستخدم هذه الخدمات لأغراض المصادقة، وتخزين البيانات، وإدارة المحتوى والوظائف المرتبطة بالتشغيل.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>10. مشاركة البيانات</h3>
+                  <p>
+                    لا نقوم ببيع بيانات المستخدمين. وقد تتم معالجة بعض البيانات من خلال مزودي خدمات تقنيين ضروريين لتشغيل التطبيق،
+                    أو في حال كان ذلك مطلوبًا قانونيًا.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>11. حماية البيانات</h3>
+                  <p>
+                    نسعى لاستخدام تدابير تقنية وإدارية مناسبة لحماية البيانات من الوصول غير المصرح به أو الاستخدام غير المشروع أو الفقد.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>12. حذف الحساب</h3>
+                  <p>
+                    يمكن للمستخدم حذف حسابه من داخل التطبيق. وعند طلب حذف الحساب، سيتم إزالة البيانات المرتبطة به وفقًا لآلية التطبيق الداخلية
+                    وما يلزم تقنيًا أو قانونيًا للاحتفاظ المحدود ببعض السجلات إن وُجدت.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>13. الملكية الفكرية وحماية المحتوى</h3>
+                  <p>
+                    جميع حقوق التصميم، البرمجيات، الهوية البصرية، طريقة العرض، والأداء الخاص بالتطبيق تعود إلى
+                    <b>Hammam Aghbar</b> وشركة <b>H1Apps</b>.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>14. تحديثات السياسة</h3>
+                  <p>
+                    قد نقوم بتحديث سياسة الخصوصية من وقت لآخر. ويُعد استمرارك في استخدام التطبيق بعد أي تحديث موافقة على النسخة المحدّثة.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>15. التواصل</h3>
+                  <p>
+                    لأي استفسارات تتعلق بالخصوصية أو البيانات، يمكن التواصل عبر البريد التالي:
+                    <a class="inline-link" href="mailto:info@h1apps.xyz">info@h1apps.xyz</a>
+                  </p>
+                </section>
+              </div>
+            </article>
+          </div>
+
+          <!-- English -->
+          <div class="lang-panel ltr" id="privacy-en">
+            <article class="legal-card">
+              <div class="card-header">
+                <div class="eyebrow">🔒 Privacy Policy</div>
+                <h2>Privacy Policy — Kholasa App</h2>
+                <p class="subtitle">
+                  This policy explains how data may be collected, used, stored, and protected when using Kholasa.
+                </p>
+                <div class="badge-row">
+                  <span class="mini-badge">Kholasa</span>
+                  <span class="mini-badge">Hammam Aghbar</span>
+                  <span class="mini-badge">H1Apps</span>
+                  <span class="mini-badge">Last Updated: March 2026</span>
+                </div>
+              </div>
+
+              <div class="sections">
+                <section class="section">
+                  <h3>1. General Information</h3>
+                  <p>
+                    <b>Kholasa</b> is an educational and productivity application primarily intended for university students,
+                    especially students of Khadoori University, offering study resources, summaries, subject organization,
+                    schedules, notifications, and related academic support tools.
+                  </p>
+                  <p>
+                    The app is legally owned by <b>Hammam Aghbar</b> under <b>H1Apps</b>.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>2. Who Can Use the App</h3>
+                  <p>
+                    Some features may be accessed without creating an account, while other features require sign-in.
+                  </p>
+                  <p>
+                    The app is available to any user, although it is mainly designed for university students.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>3. Sign-In Methods</h3>
+                  <p>When account access is required, users may sign in using:</p>
+                  <ul>
+                    <li>Google Sign-In</li>
+                    <li>Apple Sign-In</li>
+                  </ul>
+                </section>
+
+                <section class="section">
+                  <h3>4. Data We May Collect</h3>
+                  <p>When using the app or signing in, we may collect or store the following types of data:</p>
+                  <ul>
+                    <li>Name</li>
+                    <li>Email address</li>
+                    <li>Profile or account image, if available</li>
+                    <li>College</li>
+                    <li>Major</li>
+                    <li>Academic year</li>
+                    <li>User-related academic subjects</li>
+                    <li>Study timetable or schedule</li>
+                    <li>In-app points</li>
+                    <li>Leaderboard ranking</li>
+                    <li>User preferences and settings</li>
+                    <li>Technical and operational information needed to improve the app</li>
+                  </ul>
+                </section>
+
+                <section class="section">
+                  <h3>5. How We Use Data</h3>
+                  <p>Collected data may be used for the following purposes:</p>
+                  <ul>
+                    <li>Creating and managing user accounts</li>
+                    <li>Operating app features and personalizing user experience</li>
+                    <li>Displaying relevant study content, schedules, and academic tools</li>
+                    <li>Sending scheduled or regular notifications related to app usage</li>
+                    <li>Improving performance, detecting issues, and enhancing user experience</li>
+                    <li>Protecting the platform and preventing misuse</li>
+                  </ul>
+                </section>
+
+                <section class="section">
+                  <h3>6. Content Within the App</h3>
+                  <p>
+                    Educational content inside the app, including summaries, PDF files, images, and links,
+                    is uploaded only by administrators or supervisors.
+                  </p>
+                  <p>
+                    Such content is subject to administrative review before publication. Regular users are not allowed to publish content inside the app.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>7. Notifications</h3>
+                  <p>
+                    The app may use regular or scheduled notifications to remind users of content, timing, updates,
+                    or activities related to app usage.
+                  </p>
+                  <p>
+                    Users may manage notifications through device settings, and some features may work best when notifications are enabled.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>8. Advertising</h3>
+                  <p>
+                    The app does not currently display ads, but ads may be added in the future to support development and operation.
+                    If advertising is introduced, this policy may be updated accordingly.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>9. Infrastructure and Storage</h3>
+                  <p>The app may rely on cloud and technical services, including:</p>
+                  <ul>
+                    <li>Firebase</li>
+                    <li>Cloud Firestore</li>
+                    <li>Firebase Storage</li>
+                  </ul>
+                  <p>
+                    These services may be used for authentication, data storage, content handling, and operational functionality.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>10. Data Sharing</h3>
+                  <p>
+                    We do not sell user data. Some data may be processed by technical service providers necessary to operate the app,
+                    or where required by law.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>11. Data Protection</h3>
+                  <p>
+                    We aim to apply suitable technical and administrative measures to protect data from unauthorized access,
+                    unlawful use, or loss.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>12. Account Deletion</h3>
+                  <p>
+                    Users may delete their accounts from within the app. When account deletion is requested, related data will be removed
+                    in accordance with the app’s internal mechanisms and any technical or legal retention requirements, if applicable.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>13. Intellectual Property</h3>
+                  <p>
+                    All rights related to the design, software, visual identity, presentation style, and app performance belong to
+                    <b>Hammam Aghbar</b> and <b>H1Apps</b>.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>14. Policy Updates</h3>
+                  <p>
+                    We may update this Privacy Policy from time to time. Continued use of the app after an update means acceptance of the revised version.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>15. Contact</h3>
+                  <p>
+                    For privacy-related questions, contact:
+                    <a class="inline-link" href="mailto:info@h1apps.xyz">info@h1apps.xyz</a>
+                  </p>
+                </section>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- TERMS -->
+        <div class="tab-panel" id="terms">
+          <!-- Arabic -->
+          <div class="lang-panel active rtl" id="terms-ar">
+            <article class="legal-card" id="terms-top">
+              <div class="card-header">
+                <div class="eyebrow">📘 الشروط والأحكام</div>
+                <h2>الشروط والأحكام — تطبيق خلاصة</h2>
+                <p class="subtitle">
+                  باستخدامك لتطبيق خلاصة، فإنك توافق على الالتزام بهذه الشروط والأحكام.
+                </p>
+                <div class="badge-row">
+                  <span class="mini-badge">استخدام تعليمي وشخصي</span>
+                  <span class="mini-badge">النقاط للتحفيز فقط</span>
+                  <span class="mini-badge">القانون: فلسطين</span>
+                </div>
+              </div>
+
+              <div class="sections">
+                <section class="section">
+                  <h3>1. قبول الشروط</h3>
+                  <p>
+                    باستخدامك لتطبيق <b>خلاصة (Kholasa)</b> فإنك تقر بأنك قرأت هذه الشروط ووافقت عليها.
+                    وإذا كنت لا توافق على أي جزء منها، يجب عليك التوقف عن استخدام التطبيق.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>2. طبيعة الاستخدام</h3>
+                  <p>
+                    التطبيق مخصص للاستخدام التعليمي والشخصي فقط. ويُحظر استخدامه لأي أغراض غير قانونية أو ضارة أو مخالفة لطبيعة الخدمة.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>3. الحسابات وتسجيل الدخول</h3>
+                  <p>
+                    يمكن استخدام بعض الميزات دون حساب، بينما تتطلب بعض الوظائف تسجيل الدخول عبر Apple أو Google.
+                  </p>
+                  <p>
+                    المستخدم مسؤول عن صحة المعلومات التي يقدمها وعن الحفاظ على وسيلة الدخول الخاصة به.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>4. المحتوى داخل التطبيق</h3>
+                  <p>
+                    يتم نشر المحتوى داخل التطبيق بواسطة الإدارة أو المشرفين فقط، ويشمل ذلك الملخصات والملفات والصور والروابط.
+                  </p>
+                  <p>
+                    لا يُسمح للمستخدم العادي بنشر أو رفع أي محتوى داخل التطبيق ما لم يتم تمكين ذلك صراحة من الإدارة.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>5. مراجعة المحتوى والإدارة</h3>
+                  <p>
+                    تخضع المواد المنشورة داخل التطبيق إلى مراجعة إدارية قبل النشر، ويحق للإدارة تعديل أو حذف أو إيقاف أي محتوى
+                    إذا رأت أنه غير مناسب أو مخالف أو يضر بجودة الخدمة.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>6. الملكية الفكرية</h3>
+                  <p>
+                    جميع حقوق الملكية الفكرية المتعلقة بالتطبيق، بما في ذلك التصميم، الكود، الواجهة، الترتيب البصري، الأداء،
+                    الهوية، والعلامات المرتبطة به، تعود إلى <b>Hammam Aghbar</b> وشركة <b>H1Apps</b>.
+                  </p>
+                  <p>
+                    لا يجوز نسخ أي جزء من التطبيق أو إعادة نشره أو استغلاله تجاريًا دون إذن خطي مسبق.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>7. القيود على الاستخدام</h3>
+                  <p>يُمنع على المستخدم القيام بأي من الأمور التالية:</p>
+                  <ul>
+                    <li>محاولة اختراق التطبيق أو تعطيله أو إساءة استخدامه</li>
+                    <li>نسخ التصميم أو المحتوى أو الوظائف البرمجية دون تصريح</li>
+                    <li>استخدام التطبيق بطريقة تضر بالمستخدمين أو بالإدارة أو بالخدمة</li>
+                    <li>التحايل على الأنظمة الداخلية أو على الصلاحيات الممنوحة</li>
+                  </ul>
+                </section>
+
+                <section class="section">
+                  <h3>8. نظام النقاط</h3>
+                  <p>
+                    يحتوي التطبيق على نظام نقاط داخلي بغرض التحفيز فقط. ولا تمثل هذه النقاط أي قيمة مالية أو نقدية أو قابلة للتحويل خارج التطبيق.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>9. الإشعارات</h3>
+                  <p>
+                    قد يستخدم التطبيق إشعارات عادية أو مجدولة مرتبطة بالمحتوى أو التذكيرات أو الأنشطة التعليمية أو الإدارية.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>10. الإعلانات</h3>
+                  <p>
+                    لا يعرض التطبيق إعلانات حاليًا، لكن قد يتم إضافة إعلانات مستقبلًا لدعم تشغيل التطبيق وتطويره.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>11. تعليق الحساب أو الإيقاف</h3>
+                  <p>
+                    يحق للإدارة تعليق الحساب أو تقييد الوصول أو إيقاف استخدام التطبيق إذا تبيّن وجود إساءة استخدام أو مخالفة للشروط أو خطر على المنصة.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>12. حدود المسؤولية</h3>
+                  <p>
+                    يتم توفير التطبيق "كما هو" و"حسب التوفر". ولا نضمن أن الخدمة ستكون خالية تمامًا من الانقطاع أو الأخطاء.
+                  </p>
+                  <p>
+                    وإلى الحد الذي يسمح به القانون، لا نتحمل مسؤولية الأضرار غير المباشرة أو الناتجة عن استخدام التطبيق أو عدم القدرة على استخدامه.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>13. التعديلات على الشروط</h3>
+                  <p>
+                    يجوز لنا تعديل هذه الشروط في أي وقت. ويُعد استمرارك في استخدام التطبيق بعد نشر التعديلات موافقة على النسخة المحدّثة.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>14. القانون المعمول به</h3>
+                  <p>
+                    تخضع هذه الشروط وتفسّر وفقًا لقوانين <b>فلسطين</b>، مع بقاء التطبيق متاحًا للتنزيل والاستخدام من أي مكان تسمح به الأنظمة المحلية.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>15. التواصل</h3>
+                  <p>
+                    للاستفسارات العامة أو القانونية:
+                    <a class="inline-link" href="mailto:info@h1apps.xyz">info@h1apps.xyz</a>
+                  </p>
+                </section>
+              </div>
+            </article>
+          </div>
+
+          <!-- English -->
+          <div class="lang-panel ltr" id="terms-en">
+            <article class="legal-card">
+              <div class="card-header">
+                <div class="eyebrow">📘 Terms &amp; Conditions</div>
+                <h2>Terms &amp; Conditions — Kholasa App</h2>
+                <p class="subtitle">
+                  By using Kholasa, you agree to comply with the following Terms &amp; Conditions.
+                </p>
+                <div class="badge-row">
+                  <span class="mini-badge">Educational Use</span>
+                  <span class="mini-badge">In-App Points Only</span>
+                  <span class="mini-badge">Governing Law: Palestine</span>
+                </div>
+              </div>
+
+              <div class="sections">
+                <section class="section">
+                  <h3>1. Acceptance of Terms</h3>
+                  <p>
+                    By using <b>Kholasa</b>, you acknowledge that you have read, understood, and agreed to these Terms &amp; Conditions.
+                    If you do not agree, you should stop using the app.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>2. Nature of Use</h3>
+                  <p>
+                    The app is intended for educational and personal use only. It may not be used for unlawful, harmful, or service-abusive purposes.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>3. Accounts and Sign-In</h3>
+                  <p>
+                    Some features can be used without an account, while certain features require sign-in through Apple or Google.
+                  </p>
+                  <p>
+                    Users are responsible for the accuracy of the information they provide and for maintaining the security of their access method.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>4. Content Within the App</h3>
+                  <p>
+                    Content published inside the app is uploaded only by administrators or supervisors, including summaries, files, images, and links.
+                  </p>
+                  <p>
+                    Regular users are not permitted to upload or publish content inside the app unless explicitly enabled by administration.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>5. Content Review and Administration</h3>
+                  <p>
+                    Published materials are subject to administrative review before release. Administration may edit, remove,
+                    or suspend any content considered inappropriate, non-compliant, or harmful to service quality.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>6. Intellectual Property</h3>
+                  <p>
+                    All intellectual property rights related to the app, including the design, code, interface, visual structure,
+                    performance style, identity, and associated marks, belong to <b>Hammam Aghbar</b> and <b>H1Apps</b>.
+                  </p>
+                  <p>
+                    No part of the app may be copied, republished, or commercially exploited without prior written permission.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>7. Restrictions on Use</h3>
+                  <p>Users may not:</p>
+                  <ul>
+                    <li>Attempt to hack, disable, or misuse the app</li>
+                    <li>Copy the design, content, or software functionality without authorization</li>
+                    <li>Use the app in a way that harms users, administrators, or the service</li>
+                    <li>Bypass internal systems or granted permissions</li>
+                  </ul>
+                </section>
+
+                <section class="section">
+                  <h3>8. Points System</h3>
+                  <p>
+                    The app includes an internal points system for motivation only. These points have no cash value, monetary meaning,
+                    or transferability outside the app.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>9. Notifications</h3>
+                  <p>
+                    The app may send standard or scheduled notifications related to content, reminders, educational activities, or administration.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>10. Advertising</h3>
+                  <p>
+                    The app does not currently display advertisements, but ads may be introduced in the future to support development and operation.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>11. Suspension or Termination</h3>
+                  <p>
+                    Administration may suspend an account, restrict access, or terminate app usage where misuse, violation of terms,
+                    or platform risk is identified.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>12. Limitation of Liability</h3>
+                  <p>
+                    The app is provided “as is” and “as available.” We do not guarantee that the service will always be uninterrupted or error-free.
+                  </p>
+                  <p>
+                    To the maximum extent permitted by law, we are not liable for indirect damages resulting from the use of, or inability to use, the app.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>13. Changes to Terms</h3>
+                  <p>
+                    We may update these Terms at any time. Continued use of the app after updates are published constitutes acceptance of the revised version.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>14. Governing Law</h3>
+                  <p>
+                    These Terms are governed by and interpreted in accordance with the laws of <b>Palestine</b>,
+                    while the app may remain available for download and use where local laws permit.
+                  </p>
+                </section>
+
+                <section class="section">
+                  <h3>15. Contact</h3>
+                  <p>
+                    For general or legal inquiries:
+                    <a class="inline-link" href="mailto:info@h1apps.xyz">info@h1apps.xyz</a>
+                  </p>
+                </section>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="footer">
+          Kholasa Legal Page — Designed in a visual style inspired by your app theme: cream background, dark green gradient header, rounded light cards, and elegant spacing.
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const docButtons = document.querySelectorAll('#docTabs button');
+    const langButtons = document.querySelectorAll('#langTabs button');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    let currentTab = 'privacy';
+    let currentLang = 'ar';
+
+    function renderTabs(){
+      docButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === currentTab);
+      });
+
+      langButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === currentLang);
+      });
+
+      tabPanels.forEach(panel => {
+        panel.classList.toggle('active', panel.id === currentTab);
+      });
+
+      document.querySelectorAll(`#${currentTab} .lang-panel`).forEach(panel => {
+        panel.classList.toggle('active', panel.id === `${currentTab}-${currentLang}`);
+      });
+
+      const html = document.documentElement;
+      if(currentLang === 'ar'){
+        html.lang = 'ar';
+        html.dir = 'rtl';
+      } else {
+        html.lang = 'en';
+        html.dir = 'ltr';
+      }
+    }
+
+    docButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentTab = btn.dataset.tab;
+        renderTabs();
+      });
+    });
+
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentLang = btn.dataset.lang;
+        renderTabs();
+      });
+    });
+
+    renderTabs();
+  </script>
+</body>
+</html>
