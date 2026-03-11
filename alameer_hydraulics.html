@@ -2,756 +2,672 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
   <title>شركة الأمير | Alameer Hydraulics</title>
-
+  
   <!-- أيقونة التاب -->
-<link rel="icon" type="image/png" href="assets/logo-main.png" />
-<link rel="shortcut icon" href="assets/logo-main.png" />
-<link rel="apple-touch-icon" href="assets/logo-main.png" />
-
+  <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23d7a94d'/%3E%3Ctext x='50' y='70' font-size='70' text-anchor='middle' fill='%230b1116' font-weight='bold'%3Eا%3C/text%3E%3C/svg%3E">
+  
   <style>
-    :root {
-      --bg: #0b1116;
-      --bg-soft: #101820;
-      --panel: rgba(16, 24, 32, 0.86);
-      --panel-strong: rgba(8, 13, 18, 0.95);
-      --line: rgba(255, 255, 255, 0.08);
-      --text: #f5f7f9;
-      --muted: #b8c3cb;
-      --gold: #d7a94d;
-      --gold-strong: #f5cb75;
-      --green: #31c46b;
-      --green-dark: #1f8f4b;
-      --blue: #56b8ff;
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
-      --radius-xl: 30px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
-    }
-
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
+    :root {
+      --primary: #d4a74d;
+      --primary-light: #f5cb75;
+      --primary-dark: #b88b35;
+      --secondary: #56b8ff;
+      --dark: #0a0f14;
+      --dark-soft: #151e26;
+      --dark-light: #1f2a33;
+      --text: #ffffff;
+      --text-muted: #b0c0cd;
+      --glass: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.06);
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.3);
+      --radius-sm: 14px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --radius-xl: 36px;
     }
 
     body {
-      margin: 0;
-      font-family: Tahoma, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--dark);
       color: var(--text);
-      background:
-        radial-gradient(circle at top right, rgba(245, 203, 117, 0.16), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(86, 184, 255, 0.10), transparent 25%),
-        linear-gradient(180deg, #091015 0%, #0d151c 50%, #081015 100%);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
       min-height: 100vh;
+      background: radial-gradient(circle at 0% 0%, #1a2630, #0a0f14 70%);
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      width: min(1220px, calc(100% - 28px));
-      margin: 0 auto;
-      padding: 24px 0 60px;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
-        url("assets/hero-bg.jpg") center/cover no-repeat;
-      box-shadow: var(--shadow);
-      padding: 34px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
+    /* شاشة التحميل */
+    .loader {
+      position: fixed;
       inset: 0;
-      background: linear-gradient(120deg, rgba(5, 10, 14, 0.92), rgba(9, 14, 18, 0.66));
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.3fr 0.8fr;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .logo-box {
-      display: inline-flex;
-      align-items: center;
-      gap: 16px;
-      padding: 14px 18px;
-      border-radius: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      background: rgba(8, 14, 18, 0.56);
-      backdrop-filter: blur(10px);
-      margin-bottom: 22px;
-    }
-
-    .logo-glow {
-      width: 96px;
-      height: 96px;
-      border-radius: 24px;
-      display: grid;
-      place-items: center;
-      background:
-        radial-gradient(circle, rgba(245, 203, 117, 0.30), rgba(245, 203, 117, 0.06) 58%, transparent 74%);
-      box-shadow:
-        0 0 24px rgba(245, 203, 117, 0.34),
-        0 0 56px rgba(245, 203, 117, 0.15),
-        inset 0 0 14px rgba(255, 255, 255, 0.08);
-      animation: pulse 2.4s ease-in-out infinite;
-    }
-
-    .logo-glow img {
-      width: 70px;
-      height: 70px;
-      object-fit: contain;
-      filter: drop-shadow(0 0 10px rgba(255, 221, 158, 0.52));
-    }
-
-    .eyebrow {
-      color: var(--gold-strong);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      margin-bottom: 8px;
-    }
-
-    .title-ar {
-      font-size: 26px;
-      font-weight: 800;
-      margin-bottom: 2px;
-    }
-
-    .title-en {
-      font-size: 14px;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(34px, 5vw, 66px);
-      line-height: 1.05;
-    }
-
-    .hero p {
-      margin: 18px 0 0;
-      max-width: 780px;
-      color: #d9e2e8;
-      font-size: 18px;
-      line-height: 1.95;
-    }
-
-    .hero-actions {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 220px));
-      gap: 14px;
-      margin-top: 26px;
-    }
-
-    .btn {
-      display: inline-flex;
+      background: var(--dark);
+      z-index: 9999;
+      display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 54px;
-      padding: 12px 18px;
-      border-radius: 16px;
-      font-weight: 800;
-      border: 1px solid transparent;
-      transition: 0.2s ease;
-      text-align: center;
+      transition: opacity 0.5s;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      color: #10161b;
-      background: linear-gradient(135deg, var(--gold-strong), var(--gold));
-      box-shadow: 0 16px 38px rgba(215, 169, 77, 0.28);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.12);
-      color: var(--text);
-    }
-
-    .hero-side {
-      position: relative;
-      z-index: 1;
-      border: 1px solid var(--line);
-      background: rgba(6, 11, 15, 0.66);
-      border-radius: 26px;
-      padding: 22px;
-      backdrop-filter: blur(12px);
-    }
-
-    .hero-side h2,
-    .section-title {
-      margin: 0 0 14px;
-      font-size: 24px;
-    }
-
-    .hero-side p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.95;
-      font-size: 15px;
-    }
-
-    .hero-side .stats {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .stat {
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.04);
-      border-radius: 18px;
-      padding: 16px;
-      text-align: center;
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--gold-strong);
-      font-size: 24px;
-      margin-bottom: 6px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    section {
-      margin-top: 28px;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      background: var(--panel);
-      box-shadow: var(--shadow);
-      padding: 28px;
-      backdrop-filter: blur(10px);
-    }
-
-    .section-head {
+    .loader-logo {
+      width: 100px;
+      height: 100px;
+      background: var(--primary);
+      border-radius: 30px;
       display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.9;
-    }
-
-    .download-grid,
-    .managers-grid,
-    .branches-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .download-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .managers-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .branches-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .card,
-    .store-card,
-    .manager-card,
-    .branch-card {
-      border: 1px solid var(--line);
-      background: var(--panel-strong);
-      border-radius: 22px;
-      padding: 18px;
-    }
-
-    .store-card {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      min-height: 118px;
-    }
-
-    .store-card img {
-      width: 58px;
-      height: 58px;
-      object-fit: contain;
-      flex: 0 0 58px;
-    }
-
-    .meta-label {
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 5px;
-    }
-
-    .store-card strong,
-    .manager-card strong,
-    .branch-card strong {
-      color: var(--gold-strong);
-    }
-
-    .store-card p,
-    .manager-card p,
-    .branch-card p,
-    .about-box p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      line-height: 1.9;
-    }
-
-    .about-box {
-      border: 1px solid var(--line);
-      background: var(--panel-strong);
-      border-radius: 24px;
-      padding: 22px;
-    }
-
-    .about-box h3 {
-      margin: 0 0 14px;
-      font-size: 24px;
-    }
-
-    .about-box .tagline {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      color: #10161b;
-      background: linear-gradient(135deg, var(--gold-strong), var(--gold));
-      font-weight: 800;
-      font-size: 13px;
-    }
-
-    .manager-card h3,
-    .branch-card h3 {
-      margin: 0 0 10px;
-      font-size: 21px;
-    }
-
-    .manager-role {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: var(--gold-strong);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .contact-actions,
-    .branch-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .action-btn {
-      display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 42px;
-      padding: 10px 14px;
-      border-radius: 14px;
-      font-size: 14px;
-      font-weight: 800;
-      transition: 0.2s ease;
-      border: 1px solid rgba(255,255,255,0.10);
-    }
-
-    .action-btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .call-btn {
-      background: rgba(86, 184, 255, 0.10);
-      color: #d8efff;
-      border-color: rgba(86, 184, 255, 0.20);
-    }
-
-    .wa-btn {
-      background: rgba(49, 196, 107, 0.11);
-      color: #dff8e8;
-      border-color: rgba(49, 196, 107, 0.22);
-    }
-
-    .map-btn {
-      background: rgba(255,255,255,0.05);
-      color: var(--text);
-    }
-
-    .branch-image {
-      margin-top: 16px;
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      height: 220px;
-      background: #0e151b;
-    }
-
-    .branch-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .branch-card:hover .branch-image img {
-      transform: scale(1.04);
-    }
-
-    .branch-note {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #d7e1e7;
-      line-height: 1.8;
-    }
-
-    footer {
-      margin-top: 30px;
-      text-align: center;
-      color: var(--muted);
-      line-height: 1.9;
-      padding: 10px 8px 0;
+      font-size: 60px;
+      font-weight: bold;
+      color: var(--dark);
+      animation: pulse 1.5s infinite;
+      box-shadow: 0 0 40px var(--primary);
     }
 
     @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.04);
-      }
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.9; }
     }
 
-    @media (max-width: 1100px) {
-      .branches-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    /* الحاوية الرئيسية */
+    .app {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px 16px 30px;
+      position: relative;
     }
 
-    @media (max-width: 980px) {
-      .hero-content,
-      .download-grid,
-      .managers-grid,
-      .branches-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-actions {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 22px;
-      }
-
-      section {
-        padding: 22px;
-      }
+    /* خلفية متحركة */
+    .orb {
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(212, 167, 77, 0.2), transparent 70%);
+      top: -100px;
+      right: -100px;
+      z-index: -1;
+      pointer-events: none;
     }
 
-    @media (max-width: 640px) {
-      .logo-box {
-        align-items: flex-start;
-      }
+    .orb2 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle at 70% 70%, rgba(86, 184, 255, 0.1), transparent 70%);
+      bottom: -100px;
+      left: -100px;
+      top: auto;
+      right: auto;
+    }
 
-      .logo-glow {
-        width: 78px;
-        height: 78px;
-      }
+    /* الهيدر */
+    .header {
+      margin-bottom: 30px;
+    }
 
-      .logo-glow img {
-        width: 56px;
-        height: 56px;
-      }
+    .logo-wrapper {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-soft);
+    }
 
-      .hero-side .stats {
-        grid-template-columns: 1fr;
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      font-weight: bold;
+      color: var(--dark);
+      box-shadow: 0 10px 25px rgba(212, 167, 77, 0.3);
+    }
+
+    .logo-text h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .logo-text p {
+      color: var(--primary-light);
+      font-size: 13px;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    .badge {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 50px;
+      padding: 12px 18px;
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      backdrop-filter: blur(5px);
+    }
+
+    .badge span {
+      color: var(--primary-light);
+      font-weight: 700;
+    }
+
+    /* البطاقات */
+    .card {
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-title i {
+      color: var(--primary);
+    }
+
+    /* شبكة التنزيل */
+    .download-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .store-btn {
+      background: var(--dark-light);
+      border-radius: var(--radius-md);
+      padding: 16px 10px;
+      text-align: center;
+      border: 1px solid var(--glass-border);
+      transition: 0.2s;
+      color: var(--text);
+    }
+
+    .store-btn:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary);
+    }
+
+    .store-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .store-name {
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .store-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* شبكة المسؤولين */
+    .manager-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .manager-item {
+      background: var(--dark-light);
+      border-radius: var(--radius-md);
+      padding: 18px 14px;
+      border: 1px solid var(--glass-border);
+    }
+
+    .manager-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary-light);
+      margin-bottom: 4px;
+    }
+
+    .manager-role {
+      font-size: 12px;
+      color: var(--secondary);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .manager-phone {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      word-break: break-word;
+    }
+
+    .action-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .action-call, .action-wa {
+      flex: 1;
+      padding: 12px 0;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.2s;
+      border: 1px solid transparent;
+    }
+
+    .action-call {
+      background: rgba(86, 184, 255, 0.2);
+      border-color: rgba(86, 184, 255, 0.3);
+      color: var(--secondary);
+    }
+
+    .action-wa {
+      background: rgba(49, 196, 107, 0.2);
+      border-color: rgba(49, 196, 107, 0.3);
+      color: #4cdd7e;
+    }
+
+    .action-call:active, .action-wa:active {
+      transform: scale(0.97);
+    }
+
+    /* الفروع */
+    .branches-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .branch-item {
+      background: var(--dark-light);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 1px solid var(--glass-border);
+    }
+
+    .branch-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .branch-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary-light);
+    }
+
+    .branch-location {
+      background: rgba(255,255,255,0.05);
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .branch-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .branch-image {
+      width: 100%;
+      height: 180px;
+      background: #1a2630;
+      border-radius: var(--radius-md);
+      margin-bottom: 15px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(145deg, #1f2a33, #151e26);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .branch-image::after {
+      content: "📸 صورة الفرع";
+      color: var(--text-muted);
+      font-size: 14px;
+      opacity: 0.5;
+    }
+
+    .branch-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .branch-map {
+      flex: 1;
+      padding: 14px;
+      border-radius: 12px;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      text-align: center;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+
+    /* نبذة */
+    .about-text {
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: var(--primary-dark);
+      color: var(--dark);
+      padding: 6px 15px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* الفوتر */
+    .footer {
+      text-align: center;
+      padding: 25px 0 10px;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid var(--glass-border);
+      margin-top: 20px;
+    }
+
+    /* التجاوب */
+    @media (min-width: 500px) {
+      .app {
+        max-width: 480px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
+  <!-- شاشة تحميل بسيطة -->
+  <div class="loader" id="loader">
+    <div class="loader-logo">ا</div>
+  </div>
 
-    <header class="hero">
-      <div class="hero-content">
-        <div>
-          <div class="logo-box">
-            <div class="logo-glow">
-              <img src="assets/logo-main.png" alt="شعار شركة الأمير" />
-            </div>
-            <div>
-              <div class="eyebrow">ALAMEER HYDRAULICS</div>
-              <div class="title-ar">شركة الأمير</div>
-              <div class="title-en">Hydraulics & Heavy Equipment Parts</div>
-            </div>
-          </div>
+  <div class="orb"></div>
+  <div class="orb orb2"></div>
 
-          <h1>الأمير للهيدروليك وقطع غيار المعدات الثقيلة</h1>
-
-          <p>
-            مرحباً بكم في شركة الأمير، المتخصصة في توفير قطع غيار وأدوات الجرافات والمعدات الثقيلة
-            بأعلى جودة وأفضل الأسعار. نحرص على تقديم حلول موثوقة تلبي احتياجات السوق بخبرة طويلة،
-            وتشكيلة واسعة من القطع، وخدمة عملية سريعة تضمن لعملائنا الجودة والثقة والاستمرارية.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#downloads">تنزيل التطبيق</a>
-            <a class="btn btn-secondary" href="#branches">استعراض الفروع</a>
+  <main class="app">
+    <!-- الهيدر -->
+    <header class="header">
+      <div class="logo-wrapper">
+        <div class="logo-row">
+          <div class="logo-icon">ا</div>
+          <div class="logo-text">
+            <h1>شركة الأمير</h1>
+            <p>Alameer Hydraulics</p>
           </div>
         </div>
-
-        <aside class="hero-side">
-          <h2>نبذة سريعة</h2>
-          <p>
-            نوفّر في شركة الأمير قطع الغيار، مستلزمات الهيدروليك، وأدوات المعدات الثقيلة مع اهتمام
-            حقيقي بالجودة والسعر المناسب وخدمة الزبون. هدفنا أن نكون الوجهة الأولى لكل من يبحث
-            عن الاعتمادية والخبرة والسرعة في التوفير والدعم.
-          </p>
-
-          <div class="stats">
-            <div class="stat">
-              <strong>7</strong>
-              <span>فروع</span>
-            </div>
-            <div class="stat">
-              <strong>خبرة</strong>
-              <span>وجودة مضمونة</span>
-            </div>
-          </div>
-        </aside>
+        <div class="badge">
+          <span>خبرة 15+ سنة</span>
+          <span>٧ فروع</span>
+          <span>🔧 هيدروليك</span>
+        </div>
       </div>
     </header>
 
-    <section id="downloads">
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">روابط تنزيل التطبيق</h2>
-          <p>روابط المتاجر الرسمية لتطبيق شركة الأمير.</p>
-        </div>
+    <!-- روابط التطبيق -->
+    <div class="card">
+      <div class="card-title">
+        <span>📱</span> تحميل التطبيق
       </div>
-
       <div class="download-grid">
-        <a class="store-card" href="https://play.google.com/store/apps/details?id=com.h1apps.alameer_hydraulics" target="_blank" rel="noreferrer">
-          <img src="assets/icons/google-play.png" alt="Google Play" />
-          <div>
-            <div class="meta-label">Android App</div>
-            <strong>Google Play</strong>
-            <p>تنزيل التطبيق الرسمي على أجهزة أندرويد.</p>
-          </div>
+        <a class="store-btn" href="#" onclick="alert('رابط Google Play سيفتح قريباً')">
+          <div class="store-icon">📲</div>
+          <div class="store-name">Google Play</div>
+          <div class="store-desc">لأجهزة أندرويد</div>
         </a>
-
-        <a class="store-card" href="https://apps.apple.com/us/app/alameer-hydraulics/id6748326392" target="_blank" rel="noreferrer">
-          <img src="assets/icons/app-store.png" alt="App Store" />
-          <div>
-            <div class="meta-label">iPhone App</div>
-            <strong>App Store</strong>
-            <p>تنزيل التطبيق الرسمي على أجهزة iPhone و iPad.</p>
-          </div>
+        <a class="store-btn" href="#" onclick="alert('رابط App Store سيفتح قريباً')">
+          <div class="store-icon">🍎</div>
+          <div class="store-name">App Store</div>
+          <div class="store-desc">لأجهزة آيفون</div>
         </a>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">من نحن</h2>
-          <p>تعريف مختصر بالشركة ورسالتها وخدماتها الأساسية ضمن نفس المربع كما طلبت.</p>
+    <!-- من نحن -->
+    <div class="card">
+      <div class="card-title">
+        <span>🏢</span> من نحن
+      </div>
+      <div class="about-text">
+        شركة الأمير متخصصة في الهيدروليك وقطع غيار المعدات الثقيلة. نوفر قطع غيار الجرافات، الشواكيش، وأنظمة الهيدروليك بأعلى جودة وأفضل الأسعار.
+      </div>
+      <div class="tags">
+        <span class="tag">هيدروليك</span>
+        <span class="tag">قطع غيار</span>
+        <span class="tag">معدات ثقيلة</span>
+        <span class="tag">صيانة</span>
+      </div>
+    </div>
+
+    <!-- المسؤولون -->
+    <div class="card">
+      <div class="card-title">
+        <span>👥</span> المسؤولون
+      </div>
+      <div class="manager-grid">
+        <!-- نذير -->
+        <div class="manager-item">
+          <div class="manager-name">نذير</div>
+          <div class="manager-role">نابلس - رام الله</div>
+          <div class="manager-phone">0597100022</div>
+          <div class="action-row">
+            <a href="tel:0597100022" class="action-call">📞 اتصال</a>
+            <a href="https://wa.me/972597100022" class="action-wa">💬 واتساب</a>
+          </div>
+        </div>
+        
+        <!-- أمير -->
+        <div class="manager-item">
+          <div class="manager-name">أمير</div>
+          <div class="manager-role">الأردن</div>
+          <div class="manager-phone">0799320697</div>
+          <div class="action-row">
+            <a href="tel:0799320697" class="action-call">📞 اتصال</a>
+            <a href="https://wa.me/962799320697" class="action-wa">💬 واتساب</a>
+          </div>
+        </div>
+        
+        <!-- أثير -->
+        <div class="manager-item">
+          <div class="manager-name">أثير</div>
+          <div class="manager-role">جماعين</div>
+          <div class="manager-phone">0599440051</div>
+          <div class="action-row">
+            <a href="tel:0599440051" class="action-call">📞 اتصال</a>
+            <a href="https://wa.me/972599440051" class="action-wa">💬 واتساب</a>
+          </div>
+        </div>
+        
+        <!-- علي بني جابر -->
+        <div class="manager-item">
+          <div class="manager-name">علي بني جابر</div>
+          <div class="manager-role">صاحب الشركة</div>
+          <div class="manager-phone">0597320697</div>
+          <div class="action-row">
+            <a href="tel:0597320697" class="action-call">📞 اتصال</a>
+            <a href="#" class="action-wa" style="opacity:0.5; pointer-events:none;">💬 واتساب</a>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="about-box">
-        <h3>شركة الأمير</h3>
-        <p>
-          شركة الأمير متخصصة في قطاع الهيدروليك وقطع غيار وأدوات الجرافات والمعدات الثقيلة،
-          وتعمل على تزويد الأفراد والورش والشركات بالمنتجات التي تجمع بين الجودة العالية،
-          الأداء العملي، والسعر المناسب. نعتمد على خبرة ممتدة في هذا المجال لنقدم حلولاً موثوقة
-          تلائم احتياجات العمل اليومي، مع اهتمام كبير بسرعة الخدمة، وتنوع الأصناف، والمتابعة
-          المستمرة مع الزبائن.
-        </p>
-        <p>
-          نؤمن أن الثقة تُبنى من خلال الجودة الحقيقية والتعامل الواضح، لذلك نسعى دائماً لتوفير
-          منتجات معتمدة وخدمة مريحة وفروع متعددة تساعد عملاءنا على الوصول لما يحتاجونه بسهولة.
-        </p>
-        <span class="tagline">خبرة طويلة • جودة مضمونة • أفضل الأسعار</span>
+    <!-- الفروع -->
+    <div class="card">
+      <div class="card-title">
+        <span>📍</span> فروعنا
       </div>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">المسؤولون</h2>
-          <p>أزرار اتصال وواتساب حسب التفاصيل التي أرسلتها.</p>
-        </div>
-      </div>
-
-      <div class="managers-grid">
-        <article class="manager-card">
-          <h3>نذير</h3>
-          <span class="manager-role">مسؤول نابلس ورام الله</span>
-          <p><strong>الهاتف:</strong> 0597100022</p>
-          <p><strong>واتساب:</strong> +972 59-710-0022</p>
-          <div class="contact-actions">
-            <a class="action-btn call-btn" href="tel:0597100022">اتصال</a>
-            <a class="action-btn wa-btn" href="https://wa.me/972597100022" target="_blank" rel="noreferrer">واتساب</a>
-          </div>
-        </article>
-
-        <article class="manager-card">
-          <h3>أمير</h3>
-          <span class="manager-role">مسؤول الأردن</span>
-          <p><strong>الجوال:</strong> 0799320697</p>
-          <p><strong>واتساب:</strong> +962799320697</p>
-          <div class="contact-actions">
-            <a class="action-btn call-btn" href="tel:0799320697">اتصال</a>
-            <a class="action-btn wa-btn" href="https://wa.me/962799320697" target="_blank" rel="noreferrer">واتساب</a>
-          </div>
-        </article>
-
-        <article class="manager-card">
-          <h3>أثير</h3>
-          <span class="manager-role">مسؤول جماعين</span>
-          <p><strong>الهاتف:</strong> 0599440051</p>
-          <p><strong>واتساب:</strong> +972599440051</p>
-          <div class="contact-actions">
-            <a class="action-btn call-btn" href="tel:0599440051">اتصال</a>
-            <a class="action-btn wa-btn" href="https://wa.me/972599440051" target="_blank" rel="noreferrer">واتساب</a>
-          </div>
-        </article>
-
-        <article class="manager-card">
-          <h3>علي بني جابر</h3>
-          <span class="manager-role">صاحب الشركة</span>
-          <p><strong>الهاتف:</strong> 0597320697</p>
-          <p>تواصل مباشر مع صاحب الشركة.</p>
-          <div class="contact-actions">
-            <a class="action-btn call-btn" href="tel:0597320697">اتصال</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="branches">
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">الفروع</h2>
-          <p>الفروع المعتمدة حالياً مع صور مستقلة لكل فرع، وصورة واحدة مشتركة لفرعي الأردن.</p>
-        </div>
-      </div>
-
       <div class="branches-grid">
-
-        <article class="branch-card">
-          <h3>رام الله - بيتونيا</h3>
-          <p>فرع يخدم منطقة رام الله وبيتونيا ويوفر خدمات الشركة ومنتجاتها بشكل مباشر.</p>
-          <div class="branch-image">
-            <img src="assets/branches/ramallah-betunia.jpg" alt="فرع رام الله بيتونيا" />
+        <!-- رام الله -->
+        <div class="branch-item">
+          <div class="branch-header">
+            <span class="branch-name">رام الله - بيتونيا</span>
+            <span class="branch-location">🇵🇸</span>
           </div>
+          <div class="branch-desc">فرع رئيسي - جميع القطع والصيانة</div>
+          <div class="branch-image"></div>
           <div class="branch-actions">
-            <a class="action-btn map-btn" href="https://maps.app.goo.gl/cDUUjnVXizuJjm1K9?g_st=ic" target="_blank" rel="noreferrer">الموقع</a>
+            <a href="https://maps.app.goo.gl/cDUUjnVXizuJjm1K9" class="branch-map">🗺️ فتح الخريطة</a>
           </div>
-        </article>
+        </div>
 
-        <article class="branch-card">
-          <h3>نابلس - شارع الحسبة</h3>
-          <p>فرع رئيسي يخدم زبائن نابلس ويوفر قطع الغيار ومستلزمات المعدات الثقيلة.</p>
-          <div class="branch-image">
-            <img src="assets/branches/nablus-hasba.jpg" alt="فرع نابلس شارع الحسبة" />
+        <!-- نابلس شارع الحسبة -->
+        <div class="branch-item">
+          <div class="branch-header">
+            <span class="branch-name">نابلس - شارع الحسبة</span>
+            <span class="branch-location">🇵🇸</span>
           </div>
+          <div class="branch-desc">الفرع الرئيسي في نابلس</div>
+          <div class="branch-image"></div>
           <div class="branch-actions">
-            <a class="action-btn map-btn" href="https://maps.app.goo.gl/Nturqiy4XDHGiy5PA?g_st=ic" target="_blank" rel="noreferrer">الموقع</a>
+            <a href="https://maps.app.goo.gl/Nturqiy4XDHGiy5PA" class="branch-map">🗺️ فتح الخريطة</a>
           </div>
-        </article>
+        </div>
 
-        <article class="branch-card">
-          <h3>نابلس - روجيب</h3>
-          <p>فرع نابلس روجيب.</p>
-          <p class="branch-note">قسم صيانة الآليات.</p>
-          <div class="branch-image">
-            <img src="assets/branches/nablus-rujeeb.jpg" alt="فرع نابلس روجيب" />
+        <!-- نابلس روجيب -->
+        <div class="branch-item">
+          <div class="branch-header">
+            <span class="branch-name">نابلس - روجيب</span>
+            <span class="branch-location">🔧</span>
           </div>
+          <div class="branch-desc">قسم صيانة الآليات</div>
+          <div class="branch-image"></div>
           <div class="branch-actions">
-            <a class="action-btn map-btn" href="https://maps.app.goo.gl/koaUBwFWXGaiMDGE7?g_st=ic" target="_blank" rel="noreferrer">الموقع</a>
+            <a href="https://maps.app.goo.gl/koaUBwFWXGaiMDGE7" class="branch-map">🗺️ فتح الخريطة</a>
           </div>
-        </article>
+        </div>
 
-        <article class="branch-card">
-          <h3>جماعين - مفرق الكسارات</h3>
-          <p>فرع جماعين.</p>
-          <p class="branch-note">قسم صيانة شواكيش وبيع قطع غيار.</p>
-          <div class="branch-image">
-            <img src="assets/branches/jammain.jpg" alt="فرع جماعين مفرق الكسارات" />
+        <!-- جماعين -->
+        <div class="branch-item">
+          <div class="branch-header">
+            <span class="branch-name">جماعين - مفرق الكسارات</span>
+            <span class="branch-location">⛏️</span>
           </div>
-        </article>
-
-        <article class="branch-card">
-          <h3>الأردن - عمّان</h3>
-          <p>فرع الأردن لخدمة العملاء داخل المملكة.</p>
-          <div class="branch-image">
-            <img src="assets/branches/jordan.jpg" alt="فرع الأردن عمّان" />
+          <div class="branch-desc">صيانة شواكيش وقطع غيار</div>
+          <div class="branch-image"></div>
+          <div class="branch-actions">
+            <a href="#" class="branch-map">🗺️ الموقع قريباً</a>
           </div>
-        </article>
+        </div>
 
-        <article class="branch-card">
-          <h3>الأردن - أبو علندا</h3>
-          <p>فرع إضافي داخل الأردن يخدم المنطقة نفسها بصورة موحدة.</p>
-          <div class="branch-image">
-            <img src="assets/branches/jordan.jpg" alt="فرع الأردن أبو علندا" />
+        <!-- الأردن عمان -->
+        <div class="branch-item">
+          <div class="branch-header">
+            <span class="branch-name">الأردن - عمّان</span>
+            <span class="branch-location">🇯🇴</span>
           </div>
-        </article>
-
-        <article class="branch-card">
-          <h3>القاهرة - مدينة السلام</h3>
-          <p>فرع القاهرة لخدمة العملاء وتوسيع نطاق الوصول الإقليمي.</p>
-          <div class="branch-image">
-            <img src="assets/branches/cairo-salam.jpg" alt="فرع القاهرة مدينة السلام" />
+          <div class="branch-desc">الفرع الرئيسي في الأردن</div>
+          <div class="branch-image"></div>
+          <div class="branch-actions">
+            <a href="#" class="branch-map">🗺️ الموقع قريباً</a>
           </div>
-        </article>
+        </div>
 
+        <!-- الأردن ابو علندا -->
+        <div class="branch-item">
+          <div class="branch-header">
+            <span class="branch-name">الأردن - أبو علندا</span>
+            <span class="branch-location">🇯🇴</span>
+          </div>
+          <div class="branch-desc">فرع إضافي</div>
+          <div class="branch-image"></div>
+          <div class="branch-actions">
+            <a href="#" class="branch-map">🗺️ الموقع قريباً</a>
+          </div>
+        </div>
+
+        <!-- القاهرة -->
+        <div class="branch-item">
+          <div class="branch-header">
+            <span class="branch-name">القاهرة - مدينة السلام</span>
+            <span class="branch-location">🇪🇬</span>
+          </div>
+          <div class="branch-desc">فرع مصر</div>
+          <div class="branch-image"></div>
+          <div class="branch-actions">
+            <a href="#" class="branch-map">🗺️ الموقع قريباً</a>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <footer>
-      © شركة الأمير - Alameer Hydraulics. جميع الحقوق محفوظة.
+    <!-- الفوتر -->
+    <footer class="footer">
+      <div>© 2024 شركة الأمير للهيدروليك</div>
+      <div style="margin-top: 8px; font-size: 12px;">جميع الحقوق محفوظة</div>
     </footer>
+  </main>
 
-  </div>
+  <script>
+    // إخفاء شاشة التحميل بعد ثانية
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('loader').style.opacity = '0';
+        setTimeout(function() {
+          document.getElementById('loader').style.display = 'none';
+        }, 500);
+      }, 1000);
+    });
+
+    // تفعيل الأزرار بدون روابط حقيقية
+    document.querySelectorAll('a[href="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('سيتم إضافة الرابط قريباً');
+      });
+    });
+  </script>
 </body>
 </html>
