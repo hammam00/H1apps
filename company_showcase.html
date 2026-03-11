@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alameer Hydraulics | صفحة الشركة</title>
+  <style>
+    :root {
+      --bg: #0c1217;
+      --bg-soft: #111a21;
+      --panel: rgba(17, 26, 33, 0.82);
+      --panel-strong: rgba(9, 14, 19, 0.92);
+      --line: rgba(255, 255, 255, 0.08);
+      --text: #f5f7f8;
+      --muted: #afbcc6;
+      --gold: #f1c15b;
+      --gold-strong: #ffda7c;
+      --cyan: #73d7ff;
+      --green: #37d67a;
+      --danger: #ff7c72;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(241, 193, 91, 0.18), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(115, 215, 255, 0.12), transparent 22%),
+        linear-gradient(180deg, #0b1014 0%, #0f171d 52%, #0a0f13 100%);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
+        url("assets/background.jpg") center/cover no-repeat;
+      box-shadow: var(--shadow);
+      padding: 32px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(4, 9, 12, 0.9), rgba(8, 14, 18, 0.58));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .logo-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(10, 17, 22, 0.55);
+      border-radius: 24px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
+    }
+
+    .logo-glow {
+      width: 98px;
+      height: 98px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle, rgba(255, 218, 124, 0.28), rgba(255, 218, 124, 0.04) 60%, transparent 74%);
+      box-shadow:
+        0 0 22px rgba(255, 218, 124, 0.38),
+        0 0 58px rgba(255, 218, 124, 0.22),
+        inset 0 0 16px rgba(255, 255, 255, 0.08);
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+
+    .logo-glow img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 14px rgba(255, 227, 156, 0.55));
+    }
+
+    .eyebrow {
+      color: var(--gold-strong);
+      letter-spacing: 0.08em;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 4.8vw, 64px);
+      line-height: 1.05;
+    }
+
+    .hero p {
+      margin: 18px 0 0;
+      max-width: 720px;
+      color: #d8e1e7;
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .hero-actions,
+    .download-buttons,
+    .social-grid,
+    .contact-grid,
+    .pages-grid,
+    .managers-grid,
+    .branches-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .hero-actions {
+      margin-top: 26px;
+      grid-template-columns: repeat(2, minmax(0, 220px));
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 12px 18px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #10161b;
+      background: linear-gradient(135deg, var(--gold-strong), var(--gold));
+      box-shadow: 0 18px 40px rgba(241, 193, 91, 0.25);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    .hero-side {
+      position: relative;
+      z-index: 1;
+      border: 1px solid var(--line);
+      background: rgba(6, 11, 15, 0.6);
+      border-radius: 26px;
+      padding: 22px;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-side h2,
+    .section-title {
+      margin: 0 0 14px;
+      font-size: 24px;
+    }
+
+    .hero-side ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-side li {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    section {
+      margin-top: 28px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      backdrop-filter: blur(10px);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .download-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+    }
+
+    .download-buttons {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .store-card,
+    .page-card,
+    .social-card,
+    .contact-card,
+    .manager-card,
+    .branch-card {
+      border: 1px solid var(--line);
+      background: var(--panel-strong);
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .store-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 110px;
+    }
+
+    .store-card img,
+    .social-card img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      flex: 0 0 50px;
+    }
+
+    .meta-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .pages-grid,
+    .social-grid,
+    .contact-grid,
+    .managers-grid,
+    .branches-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .page-card h3,
+    .social-card h3,
+    .contact-card h3,
+    .manager-card h3,
+    .branch-card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .page-card p,
+    .social-card p,
+    .contact-card p,
+    .manager-card p,
+    .branch-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-top: 14px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--gold-strong);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .manager-card strong,
+    .contact-card strong {
+      color: var(--gold-strong);
+    }
+
+    .branch-card .branch-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .note {
+      margin-top: 20px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(115, 215, 255, 0.08);
+      border: 1px solid rgba(115, 215, 255, 0.18);
+      color: #d8f0ff;
+      line-height: 1.9;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding: 22px 12px 0;
+      text-align: center;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .placeholder {
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow:
+          0 0 22px rgba(255, 218, 124, 0.38),
+          0 0 58px rgba(255, 218, 124, 0.22),
+          inset 0 0 16px rgba(255, 255, 255, 0.08);
+      }
+      50% {
+        transform: scale(1.04);
+        box-shadow:
+          0 0 28px rgba(255, 218, 124, 0.58),
+          0 0 78px rgba(255, 218, 124, 0.3),
+          inset 0 0 22px rgba(255, 255, 255, 0.12);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-content,
+      .download-wrap,
+      .pages-grid,
+      .social-grid,
+      .contact-grid,
+      .managers-grid,
+      .branches-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .download-buttons {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-content">
+        <div>
+          <div class="logo-box">
+            <div class="logo-glow">
+              <img src="assets/logo.png" alt="شعار الشركة">
+            </div>
+            <div>
+              <div class="eyebrow">ALAMEER HYDRAULICS</div>
+              <div style="font-size: 24px; font-weight: 800;">الصفحة التعريفية الرسمية</div>
+            </div>
+          </div>
+          <h1>الأمير للهيدروليك</h1>
+          <p>
+            صفحة HTML شاملة تعرض الشركة، روابط التطبيق، صفحات التواصل، السوشال ميديا،
+            أرقام الاتصال، وصفحات المعلومات الأساسية في واجهة واحدة واضحة وقابلة للتعديل السريع.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#downloads">تنزيل التطبيق</a>
+            <a class="btn btn-secondary" href="#contact">التواصل السريع</a>
+          </div>
+        </div>
+
+        <aside class="hero-side">
+          <h2>موجود حالياً من بيانات التطبيق</h2>
+          <ul>
+            <li>فيسبوك: `facebook.com/profile.php?id=100083108511922`</li>
+            <li>إنستجرام: `instagram.com/alameer_hydraulics`</li>
+            <li>واتساب: `+972 59 247 0352`</li>
+            <li>بريد: `ali@alameer.ps`</li>
+            <li>واتساب مبيعات ظاهر داخل التطبيق: `+970 594 323 250`</li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <section id="downloads">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">روابط تنزيل التطبيق</h2>
+          <p>أضفت بطاقات جاهزة للمتاجر. ضع الروابط الرسمية مكان القيم المؤقتة.</p>
+        </div>
+      </div>
+
+      <div class="download-wrap">
+        <div class="download-buttons">
+          <a class="store-card" href="https://play.google.com/store/apps/details?id=com.alameer.app" target="_blank" rel="noreferrer">
+            <img src="assets/googlepalylogo.webp" alt="Google Play">
+            <div>
+              <div class="meta-label">Android App</div>
+              <strong>Google Play</strong>
+              <p>الرابط الحالي مأخوذ من كود التحديث داخل التطبيق. بدّله إذا كان الرابط الرسمي مختلفاً.</p>
+            </div>
+          </a>
+
+          <a class="store-card" href="#" onclick="return false;">
+            <img src="assets/appstoelogo.jpg" alt="App Store">
+            <div>
+              <div class="meta-label">iPhone App</div>
+              <strong>App Store</strong>
+              <p class="placeholder">أحتاج رابط App Store الرسمي</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="store-card" style="align-items: flex-start; flex-direction: column;">
+          <div class="meta-label">معلومة مهمة</div>
+          <strong>صفحة تنزيل موحدة</strong>
+          <p>
+            إذا تريد، أقدر بعد ذلك أحول هذه البطاقات إلى أزرار ذكية:
+            على iPhone تفتح App Store،
+            وعلى Android تفتح Google Play،
+            وعلى الكمبيوتر تعرض خيارين مع QR code.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">صفحات الشركة</h2>
+          <p>هذه أقسام جاهزة لتجميع روابط صفحات الشركة والمعلومات الرسمية في مكان واحد.</p>
+        </div>
+      </div>
+
+      <div class="pages-grid">
+        <article class="page-card">
+          <h3>من نحن</h3>
+          <p>قسم تعريفي عن الشركة، تاريخها، مجالات العمل، والخدمات الأساسية.</p>
+          <span class="pill">جاهز للنص</span>
+        </article>
+
+        <article class="page-card">
+          <h3>الفروع</h3>
+          <p>يمكن ربطه مع أسماء الفروع، أوقات الدوام، المواقع، وأرقام كل فرع.</p>
+          <span class="pill">قابل للتوسعة</span>
+        </article>
+
+        <article class="page-card">
+          <h3>السياسات والخدمات</h3>
+          <p>الخصوصية، سياسة المتجر، طرق الدفع، تكلفة التوصيل، والاستلام من الفرع.</p>
+          <span class="pill">روابط داخلية</span>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">السوشال ميديا</h2>
+          <p>تم تعبئة الروابط التي وجدتها داخل التطبيق نفسه.</p>
+        </div>
+      </div>
+
+      <div class="social-grid">
+        <a class="social-card" href="http://facebook.com/profile.php?id=100083108511922" target="_blank" rel="noreferrer">
+          <img src="assets/facebook.png" alt="Facebook">
+          <h3>فيسبوك</h3>
+          <p>الصفحة الحالية الموجودة داخل شاشة التواصل في التطبيق.</p>
+          <span class="pill">فتح الصفحة</span>
+        </a>
+
+        <a class="social-card" href="https://instagram.com/alameer_hydraulics" target="_blank" rel="noreferrer">
+          <img src="assets/instagram.png" alt="Instagram">
+          <h3>إنستجرام</h3>
+          <p>@alameer_hydraulics</p>
+          <span class="pill">فتح الحساب</span>
+        </a>
+
+        <a class="social-card" href="https://wa.me/972592470352" target="_blank" rel="noreferrer">
+          <img src="assets/whatsapp.png" alt="WhatsApp">
+          <h3>واتساب</h3>
+          <p>التواصل المباشر الموجود في شاشة "تواصل معنا".</p>
+          <span class="pill">مراسلة مباشرة</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">التواصل والأرقام</h2>
+          <p>أضفت الأرقام والإيميل المستخرجة من الكود، مع أماكن مخصصة لإضافة أرقام إضافية.</p>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <article class="contact-card">
+          <h3>واتساب الإدارة</h3>
+          <p><strong>+972 59 247 0352</strong></p>
+          <p>موجود في شاشة التواصل الرسمية داخل التطبيق.</p>
+        </article>
+
+        <article class="contact-card">
+          <h3>واتساب المبيعات</h3>
+          <p><strong>+970 594 323 250</strong></p>
+          <p>موجود في صفحة تفاصيل المنتج للتواصل السريع.</p>
+        </article>
+
+        <article class="contact-card">
+          <h3>البريد الإلكتروني</h3>
+          <p><strong>ali@alameer.ps</strong></p>
+          <p>يمكن تحويله إلى صندوق عام أو بريد دعم إذا عندكم بريد أدق.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">المسؤولون</h2>
+          <p>هذه البطاقات جاهزة. فقط أرسل لي أسماء المسؤولين وروابطهم أو أرقامهم لأثبتها مباشرة.</p>
+        </div>
+      </div>
+
+      <div class="managers-grid">
+        <article class="manager-card">
+          <h3>المسؤول 1</h3>
+          <p class="placeholder">أحتاج الاسم + المنصب + رقم واتساب</p>
+        </article>
+
+        <article class="manager-card">
+          <h3>المسؤول 2</h3>
+          <p class="placeholder">أحتاج الاسم + المنصب + رابط السوشال إن وجد</p>
+        </article>
+
+        <article class="manager-card">
+          <h3>المسؤول 3</h3>
+          <p class="placeholder">أحتاج الاسم + طريقة التواصل المفضلة</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">الفروع</h2>
+          <p>في التطبيق يوجد نظام فروع من Firestore، لكن أسماء الفروع وأرقامها ليست ثابتة داخل الكود. لذلك جهزت لك القالب.</p>
+        </div>
+      </div>
+
+      <div class="branches-grid">
+        <article class="branch-card">
+          <h3>فرع 1</h3>
+          <p class="placeholder">أحتاج اسم الفرع + العنوان + الهاتف + الواتساب</p>
+          <div class="branch-actions">
+            <span class="pill">اتصال</span>
+            <span class="pill">واتساب</span>
+            <span class="pill">موقع الفرع</span>
+          </div>
+        </article>
+
+        <article class="branch-card">
+          <h3>فرع 2</h3>
+          <p class="placeholder">أحتاج اسم الفرع + العنوان + الهاتف + الواتساب</p>
+          <div class="branch-actions">
+            <span class="pill">اتصال</span>
+            <span class="pill">واتساب</span>
+            <span class="pill">موقع الفرع</span>
+          </div>
+        </article>
+
+        <article class="branch-card">
+          <h3>فرع 3</h3>
+          <p class="placeholder">أحتاج اسم الفرع + العنوان + الهاتف + الواتساب</p>
+          <div class="branch-actions">
+            <span class="pill">اتصال</span>
+            <span class="pill">واتساب</span>
+            <span class="pill">موقع الفرع</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="note">
+        إذا أردت ربط الفروع مباشرة ببيانات Firestore أو تحويل هذه الصفحة إلى نسخة Web حقيقية ضمن التطبيق،
+        أقدر أبني لك نسخة ديناميكية بعد أن تحدد هل تريدها HTML ثابتة فقط أو صفحة مرتبطة ببيانات حقيقية.
+      </div>
+    </section>
+
+    <footer>
+      تم تجهيز هذه الصفحة كملف مستقل داخل المشروع ويمكن تعديلها بسرعة لتصبح صفحة الشركة الرسمية أو صفحة هبوط للتطبيق.
+    </footer>
+  </div>
+</body>
+</html>
