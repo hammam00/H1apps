@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alameer Hydraulics | صفحة الشركة</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>شركة الأمير | Alameer Hydraulics</title>
+
+  <!-- أيقونة التاب -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="shortcut icon" href="assets/favicon.png" />
+
   <style>
     :root {
-      --bg: #0c1217;
-      --bg-soft: #111a21;
-      --panel: rgba(17, 26, 33, 0.82);
-      --panel-strong: rgba(9, 14, 19, 0.92);
+      --bg: #0b1116;
+      --bg-soft: #101820;
+      --panel: rgba(16, 24, 32, 0.86);
+      --panel-strong: rgba(8, 13, 18, 0.95);
       --line: rgba(255, 255, 255, 0.08);
-      --text: #f5f7f8;
-      --muted: #afbcc6;
-      --gold: #f1c15b;
-      --gold-strong: #ffda7c;
-      --cyan: #73d7ff;
-      --green: #37d67a;
-      --danger: #ff7c72;
-      --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+      --text: #f5f7f9;
+      --muted: #b8c3cb;
+      --gold: #d7a94d;
+      --gold-strong: #f5cb75;
+      --green: #31c46b;
+      --green-dark: #1f8f4b;
+      --blue: #56b8ff;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+      --radius-xl: 30px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -30,10 +42,15 @@
       font-family: Tahoma, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top right, rgba(241, 193, 91, 0.18), transparent 28%),
-        radial-gradient(circle at bottom left, rgba(115, 215, 255, 0.12), transparent 22%),
-        linear-gradient(180deg, #0b1014 0%, #0f171d 52%, #0a0f13 100%);
+        radial-gradient(circle at top right, rgba(245, 203, 117, 0.16), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(86, 184, 255, 0.10), transparent 25%),
+        linear-gradient(180deg, #091015 0%, #0d151c 50%, #081015 100%);
       min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     a {
@@ -42,28 +59,28 @@
     }
 
     .page {
-      width: min(1180px, calc(100% - 32px));
+      width: min(1220px, calc(100% - 28px));
       margin: 0 auto;
-      padding: 32px 0 56px;
+      padding: 24px 0 60px;
     }
 
     .hero {
       position: relative;
       overflow: hidden;
       border: 1px solid var(--line);
-      border-radius: 30px;
+      border-radius: var(--radius-xl);
       background:
         linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
-        url("assets/background.jpg") center/cover no-repeat;
+        url("assets/hero-bg.jpg") center/cover no-repeat;
       box-shadow: var(--shadow);
-      padding: 32px;
+      padding: 34px;
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(120deg, rgba(4, 9, 12, 0.9), rgba(8, 14, 18, 0.58));
+      background: linear-gradient(120deg, rgba(5, 10, 14, 0.92), rgba(9, 14, 18, 0.66));
       pointer-events: none;
     }
 
@@ -71,7 +88,7 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: 1.25fr 0.85fr;
+      grid-template-columns: 1.3fr 0.8fr;
       gap: 24px;
       align-items: center;
     }
@@ -81,84 +98,87 @@
       align-items: center;
       gap: 16px;
       padding: 14px 18px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(10, 17, 22, 0.55);
       border-radius: 24px;
-      margin-bottom: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      background: rgba(8, 14, 18, 0.56);
       backdrop-filter: blur(10px);
+      margin-bottom: 22px;
     }
 
     .logo-glow {
-      width: 98px;
-      height: 98px;
+      width: 96px;
+      height: 96px;
       border-radius: 24px;
       display: grid;
       place-items: center;
       background:
-        radial-gradient(circle, rgba(255, 218, 124, 0.28), rgba(255, 218, 124, 0.04) 60%, transparent 74%);
+        radial-gradient(circle, rgba(245, 203, 117, 0.30), rgba(245, 203, 117, 0.06) 58%, transparent 74%);
       box-shadow:
-        0 0 22px rgba(255, 218, 124, 0.38),
-        0 0 58px rgba(255, 218, 124, 0.22),
-        inset 0 0 16px rgba(255, 255, 255, 0.08);
-      animation: pulse 2.2s ease-in-out infinite;
+        0 0 24px rgba(245, 203, 117, 0.34),
+        0 0 56px rgba(245, 203, 117, 0.15),
+        inset 0 0 14px rgba(255, 255, 255, 0.08);
+      animation: pulse 2.4s ease-in-out infinite;
     }
 
     .logo-glow img {
-      width: 72px;
-      height: 72px;
+      width: 70px;
+      height: 70px;
       object-fit: contain;
-      filter: drop-shadow(0 0 14px rgba(255, 227, 156, 0.55));
+      filter: drop-shadow(0 0 10px rgba(255, 221, 158, 0.52));
     }
 
     .eyebrow {
       color: var(--gold-strong);
-      letter-spacing: 0.08em;
       font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 14px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+
+    .title-ar {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+
+    .title-en {
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(34px, 4.8vw, 64px);
+      font-size: clamp(34px, 5vw, 66px);
       line-height: 1.05;
     }
 
     .hero p {
       margin: 18px 0 0;
-      max-width: 720px;
-      color: #d8e1e7;
+      max-width: 780px;
+      color: #d9e2e8;
       font-size: 18px;
-      line-height: 1.9;
-    }
-
-    .hero-actions,
-    .download-buttons,
-    .social-grid,
-    .contact-grid,
-    .pages-grid,
-    .managers-grid,
-    .branches-grid {
-      display: grid;
-      gap: 14px;
+      line-height: 1.95;
     }
 
     .hero-actions {
-      margin-top: 26px;
+      display: grid;
       grid-template-columns: repeat(2, minmax(0, 220px));
+      gap: 14px;
+      margin-top: 26px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       min-height: 54px;
       padding: 12px 18px;
       border-radius: 16px;
+      font-weight: 800;
       border: 1px solid transparent;
-      font-weight: 700;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      transition: 0.2s ease;
+      text-align: center;
     }
 
     .btn:hover {
@@ -168,12 +188,12 @@
     .btn-primary {
       color: #10161b;
       background: linear-gradient(135deg, var(--gold-strong), var(--gold));
-      box-shadow: 0 18px 40px rgba(241, 193, 91, 0.25);
+      box-shadow: 0 16px 38px rgba(215, 169, 77, 0.28);
     }
 
     .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
       border-color: rgba(255, 255, 255, 0.12);
-      background: rgba(255, 255, 255, 0.04);
       color: var(--text);
     }
 
@@ -181,7 +201,7 @@
       position: relative;
       z-index: 1;
       border: 1px solid var(--line);
-      background: rgba(6, 11, 15, 0.6);
+      background: rgba(6, 11, 15, 0.66);
       border-radius: 26px;
       padding: 22px;
       backdrop-filter: blur(12px);
@@ -193,20 +213,38 @@
       font-size: 24px;
     }
 
-    .hero-side ul {
+    .hero-side p {
       margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 12px;
+      color: var(--muted);
+      line-height: 1.95;
+      font-size: 15px;
     }
 
-    .hero-side li {
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.04);
+    .hero-side .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold-strong);
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
       color: var(--muted);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 14px;
     }
 
     section {
@@ -230,23 +268,30 @@
     .section-head p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.8;
+      line-height: 1.9;
     }
 
-    .download-wrap {
+    .download-grid,
+    .managers-grid,
+    .branches-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 20px;
+      gap: 18px;
     }
 
-    .download-buttons {
+    .download-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .managers-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .branches-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card,
     .store-card,
-    .page-card,
-    .social-card,
-    .contact-card,
     .manager-card,
     .branch-card {
       border: 1px solid var(--line);
@@ -258,131 +303,204 @@
     .store-card {
       display: flex;
       align-items: center;
-      gap: 14px;
-      min-height: 110px;
+      gap: 16px;
+      min-height: 118px;
     }
 
-    .store-card img,
-    .social-card img {
-      width: 50px;
-      height: 50px;
+    .store-card img {
+      width: 58px;
+      height: 58px;
       object-fit: contain;
-      flex: 0 0 50px;
+      flex: 0 0 58px;
     }
 
     .meta-label {
       font-size: 12px;
       color: var(--muted);
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
 
-    .pages-grid,
-    .social-grid,
-    .contact-grid,
-    .managers-grid,
-    .branches-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    .store-card strong,
+    .manager-card strong,
+    .branch-card strong {
+      color: var(--gold-strong);
     }
 
-    .page-card h3,
-    .social-card h3,
-    .contact-card h3,
+    .store-card p,
+    .manager-card p,
+    .branch-card p,
+    .about-box p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .about-box {
+      border: 1px solid var(--line);
+      background: var(--panel-strong);
+      border-radius: 24px;
+      padding: 22px;
+    }
+
+    .about-box h3 {
+      margin: 0 0 14px;
+      font-size: 24px;
+    }
+
+    .about-box .tagline {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: #10161b;
+      background: linear-gradient(135deg, var(--gold-strong), var(--gold));
+      font-weight: 800;
+      font-size: 13px;
+    }
+
     .manager-card h3,
     .branch-card h3 {
       margin: 0 0 10px;
-      font-size: 20px;
+      font-size: 21px;
     }
 
-    .page-card p,
-    .social-card p,
-    .contact-card p,
-    .manager-card p,
-    .branch-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 34px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      margin-top: 14px;
-      background: rgba(255, 255, 255, 0.06);
+    .manager-role {
+      display: inline-block;
+      margin-bottom: 10px;
       color: var(--gold-strong);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
     }
 
-    .manager-card strong,
-    .contact-card strong {
-      color: var(--gold-strong);
-    }
-
-    .branch-card .branch-actions {
+    .contact-actions,
+    .branch-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 16px;
     }
 
-    .note {
-      margin-top: 20px;
-      padding: 16px 18px;
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .call-btn {
+      background: rgba(86, 184, 255, 0.10);
+      color: #d8efff;
+      border-color: rgba(86, 184, 255, 0.20);
+    }
+
+    .wa-btn {
+      background: rgba(49, 196, 107, 0.11);
+      color: #dff8e8;
+      border-color: rgba(49, 196, 107, 0.22);
+    }
+
+    .map-btn {
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+    }
+
+    .branch-image {
+      margin-top: 16px;
+      overflow: hidden;
       border-radius: 18px;
-      background: rgba(115, 215, 255, 0.08);
-      border: 1px solid rgba(115, 215, 255, 0.18);
-      color: #d8f0ff;
-      line-height: 1.9;
+      border: 1px solid rgba(255,255,255,0.08);
+      height: 220px;
+      background: #0e151b;
+    }
+
+    .branch-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .branch-card:hover .branch-image img {
+      transform: scale(1.04);
+    }
+
+    .branch-note {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #d7e1e7;
+      line-height: 1.8;
     }
 
     footer {
-      margin-top: 28px;
-      padding: 22px 12px 0;
+      margin-top: 30px;
       text-align: center;
       color: var(--muted);
       line-height: 1.9;
-    }
-
-    .placeholder {
-      color: var(--danger);
-      font-weight: 700;
+      padding: 10px 8px 0;
     }
 
     @keyframes pulse {
       0%, 100% {
         transform: scale(1);
-        box-shadow:
-          0 0 22px rgba(255, 218, 124, 0.38),
-          0 0 58px rgba(255, 218, 124, 0.22),
-          inset 0 0 16px rgba(255, 255, 255, 0.08);
       }
       50% {
         transform: scale(1.04);
-        box-shadow:
-          0 0 28px rgba(255, 218, 124, 0.58),
-          0 0 78px rgba(255, 218, 124, 0.3),
-          inset 0 0 22px rgba(255, 255, 255, 0.12);
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .branches-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
     @media (max-width: 980px) {
       .hero-content,
-      .download-wrap,
-      .pages-grid,
-      .social-grid,
-      .contact-grid,
+      .download-grid,
       .managers-grid,
       .branches-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-actions,
-      .download-buttons {
+      .hero-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 22px;
+      }
+
+      section {
+        padding: 22px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .logo-box {
+        align-items: flex-start;
+      }
+
+      .logo-glow {
+        width: 78px;
+        height: 78px;
+      }
+
+      .logo-glow img {
+        width: 56px;
+        height: 56px;
+      }
+
+      .hero-side .stats {
         grid-template-columns: 1fr;
       }
     }
@@ -390,38 +508,53 @@
 </head>
 <body>
   <div class="page">
+
     <header class="hero">
       <div class="hero-content">
         <div>
           <div class="logo-box">
             <div class="logo-glow">
-              <img src="assets/logo.png" alt="شعار الشركة">
+              <img src="assets/logo-main.png" alt="شعار شركة الأمير" />
             </div>
             <div>
               <div class="eyebrow">ALAMEER HYDRAULICS</div>
-              <div style="font-size: 24px; font-weight: 800;">الصفحة التعريفية الرسمية</div>
+              <div class="title-ar">شركة الأمير</div>
+              <div class="title-en">Hydraulics & Heavy Equipment Parts</div>
             </div>
           </div>
-          <h1>الأمير للهيدروليك</h1>
+
+          <h1>الأمير للهيدروليك وقطع غيار المعدات الثقيلة</h1>
+
           <p>
-            صفحة HTML شاملة تعرض الشركة، روابط التطبيق، صفحات التواصل، السوشال ميديا،
-            أرقام الاتصال، وصفحات المعلومات الأساسية في واجهة واحدة واضحة وقابلة للتعديل السريع.
+            مرحباً بكم في شركة الأمير، المتخصصة في توفير قطع غيار وأدوات الجرافات والمعدات الثقيلة
+            بأعلى جودة وأفضل الأسعار. نحرص على تقديم حلول موثوقة تلبي احتياجات السوق بخبرة طويلة،
+            وتشكيلة واسعة من القطع، وخدمة عملية سريعة تضمن لعملائنا الجودة والثقة والاستمرارية.
           </p>
+
           <div class="hero-actions">
             <a class="btn btn-primary" href="#downloads">تنزيل التطبيق</a>
-            <a class="btn btn-secondary" href="#contact">التواصل السريع</a>
+            <a class="btn btn-secondary" href="#branches">استعراض الفروع</a>
           </div>
         </div>
 
         <aside class="hero-side">
-          <h2>موجود حالياً من بيانات التطبيق</h2>
-          <ul>
-            <li>فيسبوك: `facebook.com/profile.php?id=100083108511922`</li>
-            <li>إنستجرام: `instagram.com/alameer_hydraulics`</li>
-            <li>واتساب: `+972 59 247 0352`</li>
-            <li>بريد: `ali@alameer.ps`</li>
-            <li>واتساب مبيعات ظاهر داخل التطبيق: `+970 594 323 250`</li>
-          </ul>
+          <h2>نبذة سريعة</h2>
+          <p>
+            نوفّر في شركة الأمير قطع الغيار، مستلزمات الهيدروليك، وأدوات المعدات الثقيلة مع اهتمام
+            حقيقي بالجودة والسعر المناسب وخدمة الزبون. هدفنا أن نكون الوجهة الأولى لكل من يبحث
+            عن الاعتمادية والخبرة والسرعة في التوفير والدعم.
+          </p>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>7</strong>
+              <span>فروع</span>
+            </div>
+            <div class="stat">
+              <strong>خبرة</strong>
+              <span>وجودة مضمونة</span>
+            </div>
+          </div>
         </aside>
       </div>
     </header>
@@ -430,131 +563,53 @@
       <div class="section-head">
         <div>
           <h2 class="section-title">روابط تنزيل التطبيق</h2>
-          <p>أضفت بطاقات جاهزة للمتاجر. ضع الروابط الرسمية مكان القيم المؤقتة.</p>
+          <p>روابط المتاجر الرسمية لتطبيق شركة الأمير.</p>
         </div>
       </div>
 
-      <div class="download-wrap">
-        <div class="download-buttons">
-          <a class="store-card" href="https://play.google.com/store/apps/details?id=com.alameer.app" target="_blank" rel="noreferrer">
-            <img src="assets/googlepalylogo.webp" alt="Google Play">
-            <div>
-              <div class="meta-label">Android App</div>
-              <strong>Google Play</strong>
-              <p>الرابط الحالي مأخوذ من كود التحديث داخل التطبيق. بدّله إذا كان الرابط الرسمي مختلفاً.</p>
-            </div>
-          </a>
+      <div class="download-grid">
+        <a class="store-card" href="https://play.google.com/store/apps/details?id=com.h1apps.alameer_hydraulics" target="_blank" rel="noreferrer">
+          <img src="assets/icons/google-play.png" alt="Google Play" />
+          <div>
+            <div class="meta-label">Android App</div>
+            <strong>Google Play</strong>
+            <p>تنزيل التطبيق الرسمي على أجهزة أندرويد.</p>
+          </div>
+        </a>
 
-          <a class="store-card" href="#" onclick="return false;">
-            <img src="assets/appstoelogo.jpg" alt="App Store">
-            <div>
-              <div class="meta-label">iPhone App</div>
-              <strong>App Store</strong>
-              <p class="placeholder">أحتاج رابط App Store الرسمي</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="store-card" style="align-items: flex-start; flex-direction: column;">
-          <div class="meta-label">معلومة مهمة</div>
-          <strong>صفحة تنزيل موحدة</strong>
-          <p>
-            إذا تريد، أقدر بعد ذلك أحول هذه البطاقات إلى أزرار ذكية:
-            على iPhone تفتح App Store،
-            وعلى Android تفتح Google Play،
-            وعلى الكمبيوتر تعرض خيارين مع QR code.
-          </p>
-        </div>
+        <a class="store-card" href="https://apps.apple.com/us/app/alameer-hydraulics/id6748326392" target="_blank" rel="noreferrer">
+          <img src="assets/icons/app-store.png" alt="App Store" />
+          <div>
+            <div class="meta-label">iPhone App</div>
+            <strong>App Store</strong>
+            <p>تنزيل التطبيق الرسمي على أجهزة iPhone و iPad.</p>
+          </div>
+        </a>
       </div>
     </section>
 
     <section>
       <div class="section-head">
         <div>
-          <h2 class="section-title">صفحات الشركة</h2>
-          <p>هذه أقسام جاهزة لتجميع روابط صفحات الشركة والمعلومات الرسمية في مكان واحد.</p>
+          <h2 class="section-title">من نحن</h2>
+          <p>تعريف مختصر بالشركة ورسالتها وخدماتها الأساسية ضمن نفس المربع كما طلبت.</p>
         </div>
       </div>
 
-      <div class="pages-grid">
-        <article class="page-card">
-          <h3>من نحن</h3>
-          <p>قسم تعريفي عن الشركة، تاريخها، مجالات العمل، والخدمات الأساسية.</p>
-          <span class="pill">جاهز للنص</span>
-        </article>
-
-        <article class="page-card">
-          <h3>الفروع</h3>
-          <p>يمكن ربطه مع أسماء الفروع، أوقات الدوام، المواقع، وأرقام كل فرع.</p>
-          <span class="pill">قابل للتوسعة</span>
-        </article>
-
-        <article class="page-card">
-          <h3>السياسات والخدمات</h3>
-          <p>الخصوصية، سياسة المتجر، طرق الدفع، تكلفة التوصيل، والاستلام من الفرع.</p>
-          <span class="pill">روابط داخلية</span>
-        </article>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">السوشال ميديا</h2>
-          <p>تم تعبئة الروابط التي وجدتها داخل التطبيق نفسه.</p>
-        </div>
-      </div>
-
-      <div class="social-grid">
-        <a class="social-card" href="http://facebook.com/profile.php?id=100083108511922" target="_blank" rel="noreferrer">
-          <img src="assets/facebook.png" alt="Facebook">
-          <h3>فيسبوك</h3>
-          <p>الصفحة الحالية الموجودة داخل شاشة التواصل في التطبيق.</p>
-          <span class="pill">فتح الصفحة</span>
-        </a>
-
-        <a class="social-card" href="https://instagram.com/alameer_hydraulics" target="_blank" rel="noreferrer">
-          <img src="assets/instagram.png" alt="Instagram">
-          <h3>إنستجرام</h3>
-          <p>@alameer_hydraulics</p>
-          <span class="pill">فتح الحساب</span>
-        </a>
-
-        <a class="social-card" href="https://wa.me/972592470352" target="_blank" rel="noreferrer">
-          <img src="assets/whatsapp.png" alt="WhatsApp">
-          <h3>واتساب</h3>
-          <p>التواصل المباشر الموجود في شاشة "تواصل معنا".</p>
-          <span class="pill">مراسلة مباشرة</span>
-        </a>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">التواصل والأرقام</h2>
-          <p>أضفت الأرقام والإيميل المستخرجة من الكود، مع أماكن مخصصة لإضافة أرقام إضافية.</p>
-        </div>
-      </div>
-
-      <div class="contact-grid">
-        <article class="contact-card">
-          <h3>واتساب الإدارة</h3>
-          <p><strong>+972 59 247 0352</strong></p>
-          <p>موجود في شاشة التواصل الرسمية داخل التطبيق.</p>
-        </article>
-
-        <article class="contact-card">
-          <h3>واتساب المبيعات</h3>
-          <p><strong>+970 594 323 250</strong></p>
-          <p>موجود في صفحة تفاصيل المنتج للتواصل السريع.</p>
-        </article>
-
-        <article class="contact-card">
-          <h3>البريد الإلكتروني</h3>
-          <p><strong>ali@alameer.ps</strong></p>
-          <p>يمكن تحويله إلى صندوق عام أو بريد دعم إذا عندكم بريد أدق.</p>
-        </article>
+      <div class="about-box">
+        <h3>شركة الأمير</h3>
+        <p>
+          شركة الأمير متخصصة في قطاع الهيدروليك وقطع غيار وأدوات الجرافات والمعدات الثقيلة،
+          وتعمل على تزويد الأفراد والورش والشركات بالمنتجات التي تجمع بين الجودة العالية،
+          الأداء العملي، والسعر المناسب. نعتمد على خبرة ممتدة في هذا المجال لنقدم حلولاً موثوقة
+          تلائم احتياجات العمل اليومي، مع اهتمام كبير بسرعة الخدمة، وتنوع الأصناف، والمتابعة
+          المستمرة مع الزبائن.
+        </p>
+        <p>
+          نؤمن أن الثقة تُبنى من خلال الجودة الحقيقية والتعامل الواضح، لذلك نسعى دائماً لتوفير
+          منتجات معتمدة وخدمة مريحة وفروع متعددة تساعد عملاءنا على الوصول لما يحتاجونه بسهولة.
+        </p>
+        <span class="tagline">خبرة طويلة • جودة مضمونة • أفضل الأسعار</span>
       </div>
     </section>
 
@@ -562,77 +617,140 @@
       <div class="section-head">
         <div>
           <h2 class="section-title">المسؤولون</h2>
-          <p>هذه البطاقات جاهزة. فقط أرسل لي أسماء المسؤولين وروابطهم أو أرقامهم لأثبتها مباشرة.</p>
+          <p>أزرار اتصال وواتساب حسب التفاصيل التي أرسلتها.</p>
         </div>
       </div>
 
       <div class="managers-grid">
         <article class="manager-card">
-          <h3>المسؤول 1</h3>
-          <p class="placeholder">أحتاج الاسم + المنصب + رقم واتساب</p>
+          <h3>نذير</h3>
+          <span class="manager-role">مسؤول نابلس ورام الله</span>
+          <p><strong>الهاتف:</strong> 0597100022</p>
+          <p><strong>واتساب:</strong> +972 59-710-0022</p>
+          <div class="contact-actions">
+            <a class="action-btn call-btn" href="tel:0597100022">اتصال</a>
+            <a class="action-btn wa-btn" href="https://wa.me/972597100022" target="_blank" rel="noreferrer">واتساب</a>
+          </div>
         </article>
 
         <article class="manager-card">
-          <h3>المسؤول 2</h3>
-          <p class="placeholder">أحتاج الاسم + المنصب + رابط السوشال إن وجد</p>
+          <h3>أمير</h3>
+          <span class="manager-role">مسؤول الأردن</span>
+          <p><strong>الجوال:</strong> 0799320697</p>
+          <p><strong>واتساب:</strong> +962799320697</p>
+          <div class="contact-actions">
+            <a class="action-btn call-btn" href="tel:0799320697">اتصال</a>
+            <a class="action-btn wa-btn" href="https://wa.me/962799320697" target="_blank" rel="noreferrer">واتساب</a>
+          </div>
         </article>
 
         <article class="manager-card">
-          <h3>المسؤول 3</h3>
-          <p class="placeholder">أحتاج الاسم + طريقة التواصل المفضلة</p>
+          <h3>أثير</h3>
+          <span class="manager-role">مسؤول جماعين</span>
+          <p><strong>الهاتف:</strong> 0599440051</p>
+          <p><strong>واتساب:</strong> +972599440051</p>
+          <div class="contact-actions">
+            <a class="action-btn call-btn" href="tel:0599440051">اتصال</a>
+            <a class="action-btn wa-btn" href="https://wa.me/972599440051" target="_blank" rel="noreferrer">واتساب</a>
+          </div>
+        </article>
+
+        <article class="manager-card">
+          <h3>علي بني جابر</h3>
+          <span class="manager-role">صاحب الشركة</span>
+          <p><strong>الهاتف:</strong> 0597320697</p>
+          <p>تواصل مباشر مع صاحب الشركة.</p>
+          <div class="contact-actions">
+            <a class="action-btn call-btn" href="tel:0597320697">اتصال</a>
+          </div>
         </article>
       </div>
     </section>
 
-    <section>
+    <section id="branches">
       <div class="section-head">
         <div>
           <h2 class="section-title">الفروع</h2>
-          <p>في التطبيق يوجد نظام فروع من Firestore، لكن أسماء الفروع وأرقامها ليست ثابتة داخل الكود. لذلك جهزت لك القالب.</p>
+          <p>الفروع المعتمدة حالياً مع صور مستقلة لكل فرع، وصورة واحدة مشتركة لفرعي الأردن.</p>
         </div>
       </div>
 
       <div class="branches-grid">
+
         <article class="branch-card">
-          <h3>فرع 1</h3>
-          <p class="placeholder">أحتاج اسم الفرع + العنوان + الهاتف + الواتساب</p>
+          <h3>رام الله - بيتونيا</h3>
+          <p>فرع يخدم منطقة رام الله وبيتونيا ويوفر خدمات الشركة ومنتجاتها بشكل مباشر.</p>
+          <div class="branch-image">
+            <img src="assets/branches/ramallah-betunia.jpg" alt="فرع رام الله بيتونيا" />
+          </div>
           <div class="branch-actions">
-            <span class="pill">اتصال</span>
-            <span class="pill">واتساب</span>
-            <span class="pill">موقع الفرع</span>
+            <a class="action-btn map-btn" href="https://maps.app.goo.gl/cDUUjnVXizuJjm1K9?g_st=ic" target="_blank" rel="noreferrer">الموقع</a>
           </div>
         </article>
 
         <article class="branch-card">
-          <h3>فرع 2</h3>
-          <p class="placeholder">أحتاج اسم الفرع + العنوان + الهاتف + الواتساب</p>
+          <h3>نابلس - شارع الحسبة</h3>
+          <p>فرع رئيسي يخدم زبائن نابلس ويوفر قطع الغيار ومستلزمات المعدات الثقيلة.</p>
+          <div class="branch-image">
+            <img src="assets/branches/nablus-hasba.jpg" alt="فرع نابلس شارع الحسبة" />
+          </div>
           <div class="branch-actions">
-            <span class="pill">اتصال</span>
-            <span class="pill">واتساب</span>
-            <span class="pill">موقع الفرع</span>
+            <a class="action-btn map-btn" href="https://maps.app.goo.gl/Nturqiy4XDHGiy5PA?g_st=ic" target="_blank" rel="noreferrer">الموقع</a>
           </div>
         </article>
 
         <article class="branch-card">
-          <h3>فرع 3</h3>
-          <p class="placeholder">أحتاج اسم الفرع + العنوان + الهاتف + الواتساب</p>
+          <h3>نابلس - روجيب</h3>
+          <p>فرع نابلس روجيب.</p>
+          <p class="branch-note">قسم صيانة الآليات.</p>
+          <div class="branch-image">
+            <img src="assets/branches/nablus-rujeeb.jpg" alt="فرع نابلس روجيب" />
+          </div>
           <div class="branch-actions">
-            <span class="pill">اتصال</span>
-            <span class="pill">واتساب</span>
-            <span class="pill">موقع الفرع</span>
+            <a class="action-btn map-btn" href="https://maps.app.goo.gl/koaUBwFWXGaiMDGE7?g_st=ic" target="_blank" rel="noreferrer">الموقع</a>
           </div>
         </article>
-      </div>
 
-      <div class="note">
-        إذا أردت ربط الفروع مباشرة ببيانات Firestore أو تحويل هذه الصفحة إلى نسخة Web حقيقية ضمن التطبيق،
-        أقدر أبني لك نسخة ديناميكية بعد أن تحدد هل تريدها HTML ثابتة فقط أو صفحة مرتبطة ببيانات حقيقية.
+        <article class="branch-card">
+          <h3>جماعين - مفرق الكسارات</h3>
+          <p>فرع جماعين.</p>
+          <p class="branch-note">قسم صيانة شواكيش وبيع قطع غيار.</p>
+          <div class="branch-image">
+            <img src="assets/branches/jammain.jpg" alt="فرع جماعين مفرق الكسارات" />
+          </div>
+        </article>
+
+        <article class="branch-card">
+          <h3>الأردن - عمّان</h3>
+          <p>فرع الأردن لخدمة العملاء داخل المملكة.</p>
+          <div class="branch-image">
+            <img src="assets/branches/jordan.jpg" alt="فرع الأردن عمّان" />
+          </div>
+        </article>
+
+        <article class="branch-card">
+          <h3>الأردن - أبو علندا</h3>
+          <p>فرع إضافي داخل الأردن يخدم المنطقة نفسها بصورة موحدة.</p>
+          <div class="branch-image">
+            <img src="assets/branches/jordan.jpg" alt="فرع الأردن أبو علندا" />
+          </div>
+        </article>
+
+        <article class="branch-card">
+          <h3>القاهرة - مدينة السلام</h3>
+          <p>فرع القاهرة لخدمة العملاء وتوسيع نطاق الوصول الإقليمي.</p>
+          <div class="branch-image">
+            <img src="assets/branches/cairo-salam.jpg" alt="فرع القاهرة مدينة السلام" />
+          </div>
+        </article>
+
       </div>
     </section>
 
     <footer>
-      تم تجهيز هذه الصفحة كملف مستقل داخل المشروع ويمكن تعديلها بسرعة لتصبح صفحة الشركة الرسمية أو صفحة هبوط للتطبيق.
+      © شركة الأمير - Alameer Hydraulics. جميع الحقوق محفوظة.
     </footer>
+
   </div>
 </body>
 </html>
