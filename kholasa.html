@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kholasa Legal | الشروط والأحكام وسياسة الخصوصية</title>
-  <meta name="description" content="Kholasa legal page including Privacy Policy and Terms & Conditions in Arabic and English." />
+  <title>Kholasa Legal | الشروط والأحكام وسياسة الخصوصية لتطبيق خلاصة</title>
+  <meta name="description" content="الصفحة القانونية الرسمية لتطبيق خلاصة وتشمل سياسة الخصوصية والشروط والأحكام بالعربية والإنجليزية بتنسيق واضح واحترافي مناسب للجوال." />
+  <meta property="og:title" content="Kholasa Legal | الصفحة القانونية الرسمية لتطبيق خلاصة" />
+  <meta property="og:description" content="سياسة الخصوصية والشروط والأحكام لتطبيق خلاصة ضمن صفحة قانونية واضحة ومتجاوبة مع الجوال." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="app_logo.png" />
+  <meta property="og:image:alt" content="شعار تطبيق خلاصة" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kholasa Legal | الصفحة القانونية الرسمية لتطبيق خلاصة" />
+  <meta name="twitter:description" content="سياسة الخصوصية والشروط والأحكام لتطبيق خلاصة ضمن صفحة قانونية واضحة ومتجاوبة مع الجوال." />
+  <meta name="twitter:image" content="app_logo.png" />
+  <link rel="icon" type="image/png" href="app_logo.png" />
+  <link rel="shortcut icon" href="app_logo.png" />
+  <link rel="apple-touch-icon" href="app_logo.png" />
   <style>
     :root{
       --darkGreen:#1D3B2C;
@@ -86,12 +98,22 @@
       width:56px;
       height:56px;
       border-radius:18px;
-      display:grid;
-      place-items:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       background:linear-gradient(135deg, rgba(255,255,255,.20), rgba(255,255,255,.10));
       border:1px solid rgba(255,255,255,.15);
       box-shadow:inset 0 1px 0 rgba(255,255,255,.18);
-      font-size:28px;
+      padding:8px;
+      flex-shrink:0;
+    }
+
+    .logo img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:contain;
+      border-radius:12px;
     }
 
     .brand-text h1{
@@ -406,6 +428,10 @@
       .card-header{ padding:18px 16px 12px; }
       .section{ padding:16px 10px; }
       .controls{ align-items:flex-start; }
+      .brand{ align-items:flex-start; }
+      .segmented{ width:100%; justify-content:center; }
+      .utility{ width:100%; }
+      .ghost-btn{ width:100%; text-align:center; }
     }
 
     @media print{
@@ -423,7 +449,9 @@
   <div class="page">
     <header class="hero">
       <div class="brand">
-        <div class="logo">خ</div>
+        <div class="logo" aria-label="شعار خلاصة">
+          <img src="app_logo.png" alt="شعار خلاصة" />
+        </div>
         <div class="brand-text">
           <h1>Kholasa Legal Center</h1>
           <p>سياسة الخصوصية والشروط والأحكام بتصميم متناسق مع هوية تطبيق خلاصة</p>
@@ -432,8 +460,8 @@
 
       <div class="hero-grid">
         <div class="hero-card">
-          <strong>جاهز للنشر مباشرة</strong>
-          <span>صفحة قانونية كاملة باللغتين العربية والإنجليزية، مع تبويبات للتنقل السريع ومظهر احترافي أنيق.</span>
+          <strong>الوثائق القانونية الرسمية</strong>
+          <span>سياسة الخصوصية والشروط والأحكام بالعربية والإنجليزية.</span>
         </div>
         <div class="hero-card">
           <strong>Owner / المالك القانوني</strong>
@@ -467,6 +495,7 @@
         <div class="quick-list" id="quickNav">
           <a class="quick-link" href="#privacy-top">الانتقال إلى سياسة الخصوصية</a>
           <a class="quick-link" href="#terms-top">الانتقال إلى الشروط والأحكام</a>
+          <a class="quick-link" href="kholasa_download.html">الانتقال إلى صفحة التحميل الرسمية</a>
           <a class="quick-link" href="#contact-block">بيانات التواصل</a>
         </div>
 
@@ -481,9 +510,7 @@
       </aside>
 
       <section class="content-panel">
-        <!-- PRIVACY -->
         <div class="tab-panel active" id="privacy">
-          <!-- Arabic -->
           <div class="lang-panel active rtl" id="privacy-ar">
             <article class="legal-card" id="privacy-top">
               <div class="card-header">
@@ -655,7 +682,6 @@
             </article>
           </div>
 
-          <!-- English -->
           <div class="lang-panel ltr" id="privacy-en">
             <article class="legal-card">
               <div class="card-header">
@@ -830,9 +856,7 @@
           </div>
         </div>
 
-        <!-- TERMS -->
         <div class="tab-panel" id="terms">
-          <!-- Arabic -->
           <div class="lang-panel active rtl" id="terms-ar">
             <article class="legal-card" id="terms-top">
               <div class="card-header">
@@ -977,7 +1001,6 @@
             </article>
           </div>
 
-          <!-- English -->
           <div class="lang-panel ltr" id="terms-en">
             <article class="legal-card">
               <div class="card-header">
