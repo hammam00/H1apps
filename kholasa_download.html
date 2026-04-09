@@ -11,15 +11,15 @@
     content="نزّل تطبيق خلاصة من المتجر المناسب لك، وتعرّف بسرعة على الخدمة ومعلومات التواصل والروابط المهمة."
   />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="app_logo.png" />
+  <meta property="og:image" content="kholasa.jpg" />
   <meta property="og:image:alt" content="شعار تطبيق خلاصة" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="تحميل تطبيق خلاصة الرسمي | Kholasa Download" />
   <meta name="twitter:description" content="نزّل تطبيق خلاصة من المتجر المناسب لك، وتعرّف بسرعة على الخدمة ومعلومات التواصل والروابط المهمة." />
-  <meta name="twitter:image" content="app_logo.png" />
-  <link rel="icon" type="image/png" href="app_logo.png" />
-  <link rel="shortcut icon" href="app_logo.png" />
-  <link rel="apple-touch-icon" href="app_logo.png" />
+  <meta name="twitter:image" content="kholasa.jpg" />
+  <link rel="icon" type="image/png" href="kholasa.jpg" />
+  <link rel="shortcut icon" href="kholasa.jpg" />
+  <link rel="apple-touch-icon" href="kholasa.jpg" />
   <style>
     :root{
       --darkGreen:#1D3B2C;
@@ -269,6 +269,13 @@
       margin-bottom:12px;
     }
 
+    .eyebrow-icon{
+      width:14px;
+      height:14px;
+      display:block;
+      flex-shrink:0;
+    }
+
     .card-header h2{
       margin:0;
       font-size:clamp(1.4rem, 5.8vw, 2rem);
@@ -282,21 +289,8 @@
       font-size:.97rem;
     }
 
-    .badge-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:12px;
-    }
-
-    .mini-badge{
-      background:rgba(29,59,44,.06);
-      border:1px solid var(--border);
-      color:var(--deepGreen);
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:.84rem;
-      font-weight:700;
+    .card-header .store-grid{
+      margin-top:16px;
     }
 
     .sections{
@@ -327,6 +321,91 @@
       grid-template-columns:1fr;
       gap:12px;
       margin-top:0;
+    }
+
+    .qr-store-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:12px;
+    }
+
+    .qr-store-card{
+      background:rgba(255,255,255,.42);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .qr-meta{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:6px;
+    }
+
+    .store-pill{
+      display:inline-flex;
+      align-items:center;
+      border-radius:999px;
+      padding:5px 11px;
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.2px;
+      border:1px solid transparent;
+    }
+
+    .store-pill.apple{
+      background:rgba(29,59,44,.10);
+      color:var(--darkGreen);
+      border-color:rgba(29,59,44,.18);
+    }
+
+    .store-pill.google{
+      background:rgba(52,168,83,.10);
+      color:#1f5f34;
+      border-color:rgba(52,168,83,.25);
+    }
+
+    .qr-title{
+      margin:0;
+      color:var(--darkGreen);
+      font-size:1rem;
+      line-height:1.4;
+    }
+
+    .qr-helper{
+      margin:0;
+      color:rgba(32,51,40,.70);
+      font-size:.88rem;
+      line-height:1.6;
+    }
+
+    .qr-image-wrap{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:8px;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:#fff;
+      transition:var(--transition);
+    }
+
+    .qr-image-wrap:hover{
+      transform:translateY(-1px);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .qr-image-wrap img{
+      width:min(100%, 220px);
+      height:auto;
+      display:block;
+      aspect-ratio:1 / 1;
+      object-fit:contain;
     }
 
     .store-button{
@@ -432,6 +511,44 @@
       padding:16px;
     }
 
+    .footer-title{
+      margin:0;
+      color:rgba(32,51,40,.78);
+      font-weight:700;
+    }
+
+    .collab-note{
+      margin:10px 0 8px;
+      color:var(--deepGreen);
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    .collab-strip{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      flex-wrap:wrap;
+      direction:ltr;
+    }
+
+    .collab-badge{
+      background:rgba(29,59,44,.06);
+      border:1px solid var(--border);
+      color:var(--deepGreen);
+      padding:7px 12px;
+      border-radius:999px;
+      font-size:.84rem;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    .collab-x{
+      font-weight:900;
+      color:rgba(32,51,40,.52);
+    }
+
     .download-focus{
       display:grid;
       gap:12px;
@@ -491,6 +608,10 @@
       .store-grid{
         grid-template-columns:repeat(2, minmax(0, 1fr));
       }
+
+      .qr-store-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+      }
     }
   </style>
 </head>
@@ -499,7 +620,7 @@
     <header class="hero">
       <a class="brand" href="#download-links" aria-label="الانتقال إلى روابط التحميل">
         <div class="logo" aria-hidden="true">
-          <img src="app_logo.png" alt="شعار خلاصة" />
+          <img src="kholasa.jpg" alt="شعار خلاصة" />
         </div>
         <div class="brand-text">
           <h1>تحميل تطبيق خلاصة</h1>
@@ -582,16 +703,59 @@
       <section class="content-panel">
         <article class="download-card">
           <div class="card-header">
-            <div class="eyebrow">⬇️ تحميل التطبيق الرسمي</div>
+            <div class="eyebrow">
+              <svg class="eyebrow-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>تحميل التطبيق الرسمي</span>
+            </div>
             <h2>نزّل خلاصة على جهازك</h2>
             <p class="subtitle">
               اختر المتجر المناسب لهاتفك لبدء استخدام التطبيق.
             </p>
-            <div class="badge-row">
-              <span class="mini-badge">خلاصة / Kholasa</span>
-              <span class="mini-badge">جاهز للجوال</span>
-              <span class="mini-badge">روابط رسمية</span>
-<span class="mini-badge">تصميم متوافق مع صفحة الشروط</span>
+
+            <div class="store-grid">
+              <a
+                class="store-button primary"
+                href="https://apps.apple.com/us/app/kholasa-%D8%AE%D9%84%D8%A7%D8%B5%D8%A9/id6759842527"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="تحميل تطبيق خلاصة من App Store لأجهزة iPhone"
+              >
+                <div class="store-copy">
+                  <small>لأجهزة iPhone و iPad</small>
+                  <strong>تحميل من App Store</strong>
+                </div>
+                <div class="store-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M15.39 12.73c.02 2.16 1.91 2.88 1.93 2.89-.02.05-.3 1.03-.98 2.05-.59.88-1.2 1.77-2.16 1.79-.95.02-1.26-.56-2.35-.56-1.1 0-1.44.54-2.32.58-.92.03-1.63-.93-2.22-1.81-1.21-1.76-2.13-4.98-.89-7.14.62-1.08 1.73-1.77 2.93-1.79.91-.02 1.77.61 2.35.61.57 0 1.64-.75 2.76-.64.47.02 1.8.19 2.65 1.44-.07.04-1.58.92-1.57 2.58Zm-1.88-5.28c.49-.59.83-1.41.74-2.23-.71.03-1.57.47-2.08 1.06-.46.53-.86 1.36-.75 2.16.79.06 1.6-.41 2.09-.99Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </a>
+
+              <a
+                class="store-button secondary"
+                href="https://play.google.com/store/apps/details?id=com.h1apps.ptuk.ptuk"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="تحميل تطبيق خلاصة من Google Play لأجهزة Android"
+              >
+                <div class="store-copy">
+                  <small>لأجهزة Android</small>
+                  <strong>تحميل من Google Play</strong>
+                </div>
+                <div class="store-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M3.44 2.05 13.9 12 3.44 21.95a2 2 0 0 1-.44-1.28V3.33c0-.48.16-.93.44-1.28Z" fill="#34A853"/>
+                    <path d="M17.35 8.59 5.52 1.83a2 2 0 0 0-2.08.22L13.9 12l3.45-3.41Z" fill="#4285F4"/>
+                    <path d="M17.35 15.41 13.9 12 3.44 21.95a2 2 0 0 0 2.08.22l11.83-6.76Z" fill="#FBBC04"/>
+                    <path d="M21 11.02 17.35 8.59 13.9 12l3.45 3.41L21 12.98c1.33-.82 1.33-2.14 0-2.96Z" fill="#EA4335"/>
+                  </svg>
+                </div>
+              </a>
             </div>
           </div>
 
@@ -599,51 +763,45 @@
             <section class="section">
               <h3>روابط التنزيل</h3>
               <p>
-                التحميل متوفر لأجهزة iPhone وAndroid عبر الروابط الرسمية التالية.
+                امسح كود QR الخاص بكل متجر للانتقال المباشر.
               </p>
 
-              <div class="store-grid">
-                <a
-                  class="store-button primary"
-                  href="https://apps.apple.com/us/app/kholasa-%D8%AE%D9%84%D8%A7%D8%B5%D8%A9/id6759842527"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="تحميل تطبيق خلاصة من App Store لأجهزة iPhone"
-                >
-                  <div class="store-copy">
-                    <small>لأجهزة iPhone و iPad</small>
-                    <strong>تحميل من App Store</strong>
+              <div class="qr-store-grid">
+                <article class="qr-store-card">
+                  <div class="qr-meta">
+                    <span class="store-pill apple">App Store</span>
+                    <h4 class="qr-title">لأجهزة iPhone و iPad</h4>
+                    <p class="qr-helper">امسح الكود للانتقال المباشر.</p>
                   </div>
-                  <div class="store-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M15.39 12.73c.02 2.16 1.91 2.88 1.93 2.89-.02.05-.3 1.03-.98 2.05-.59.88-1.2 1.77-2.16 1.79-.95.02-1.26-.56-2.35-.56-1.1 0-1.44.54-2.32.58-.92.03-1.63-.93-2.22-1.81-1.21-1.76-2.13-4.98-.89-7.14.62-1.08 1.73-1.77 2.93-1.79.91-.02 1.77.61 2.35.61.57 0 1.64-.75 2.76-.64.47.02 1.8.19 2.65 1.44-.07.04-1.58.92-1.57 2.58Zm-1.88-5.28c.49-.59.83-1.41.74-2.23-.71.03-1.57.47-2.08 1.06-.46.53-.86 1.36-.75 2.16.79.06 1.6-.41 2.09-.99Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </div>
-                </a>
 
-                <a
-                  class="store-button secondary"
-                  href="https://play.google.com/store/apps/details?id=com.h1apps.ptuk.ptuk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="تحميل تطبيق خلاصة من Google Play لأجهزة Android"
-                >
-                  <div class="store-copy">
-                    <small>لأجهزة Android</small>
-                    <strong>تحميل من Google Play</strong>
+                  <a
+                    class="qr-image-wrap"
+                    href="https://apps.apple.com/us/app/kholasa-%D8%AE%D9%84%D8%A7%D8%B5%D8%A9/id6759842527"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="QR تحميل تطبيق خلاصة من App Store"
+                  >
+                    <img src="App Store.png" alt="QR تحميل تطبيق خلاصة من App Store" />
+                  </a>
+                </article>
+
+                <article class="qr-store-card">
+                  <div class="qr-meta">
+                    <span class="store-pill google">Google Play</span>
+                    <h4 class="qr-title">لأجهزة Android</h4>
+                    <p class="qr-helper">امسح الكود للانتقال المباشر.</p>
                   </div>
-                  <div class="store-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M3.44 2.05 13.9 12 3.44 21.95a2 2 0 0 1-.44-1.28V3.33c0-.48.16-.93.44-1.28Z" fill="#34A853"/>
-                      <path d="M17.35 8.59 5.52 1.83a2 2 0 0 0-2.08.22L13.9 12l3.45-3.41Z" fill="#4285F4"/>
-                      <path d="M17.35 15.41 13.9 12 3.44 21.95a2 2 0 0 0 2.08.22l11.83-6.76Z" fill="#FBBC04"/>
-                      <path d="M21 11.02 17.35 8.59 13.9 12l3.45 3.41L21 12.98c1.33-.82 1.33-2.14 0-2.96Z" fill="#EA4335"/>
-                    </svg>
-                  </div>
-                </a>
+
+                  <a
+                    class="qr-image-wrap"
+                    href="https://play.google.com/store/apps/details?id=com.h1apps.ptuk.ptuk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="QR تحميل تطبيق خلاصة من Google Play"
+                  >
+                    <img src="google play.png" alt="QR تحميل تطبيق خلاصة من Google Play" />
+                  </a>
+                </article>
               </div>
             </section>
 
@@ -652,17 +810,24 @@
               <p>
 <b>خلاصة</b> هو تطبيق تعليمي يوفر أدوات للمواد الدراسية، الملخصات، تنظيم المحتوى الأكاديمي، الجداول، والإشعارات.
               </p>
-            </section>
-
-            <section class="section">
-              <h3>التحميل</h3>
-              <p>روابط المتاجر الرسمية متوفرة لأجهزة iPhone وAndroid.</p>
+              <p>
+                هذا العمل نتاج تعاون مشترك بين H1Apps و ITAICC و CODevs.
+              </p>
             </section>
           </div>
         </article>
 
         <div class="footer">
-Kholasa — Official Download Page        </div>
+          <p class="footer-title">Kholasa — Official Download Page</p>
+          <p class="collab-note">تعاون مشترك:</p>
+          <div class="collab-strip" aria-label="جهات التعاون">
+            <span class="collab-badge">H1Apps</span>
+            <span class="collab-x" aria-hidden="true">×</span>
+            <span class="collab-badge">ITAICC</span>
+            <span class="collab-x" aria-hidden="true">×</span>
+            <span class="collab-badge">CODevs</span>
+          </div>
+        </div>
       </section>
     </main>
   </div>
