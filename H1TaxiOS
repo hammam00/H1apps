@@ -1,0 +1,139 @@
+
+    .info-card strong .h1apps {
+      display: inline;
+      margin-top: 0;
+      color: var(--text);
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    @media (max-width: 880px) {
+      .page {
+        width: min(100% - 24px, 680px);
+        padding-top: 16px;
+      }
+
+      .topbar {
+        margin-bottom: 20px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .request-card,
+      .access-content {
+        padding: 18px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .brand span {
+        display: none;
+      }
+
+      .field-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .actions {
+        display: grid;
+      }
+
+      .primary-btn,
+      .secondary-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar" aria-label="رأس الصفحة">
+      <div class="logo" aria-hidden="true">T</div>
+      <div class="brand">
+        <strong>مكتب تكسي الاسراء</strong>
+        <span>نظام تشغيل رحلات وسائقين تابع لـ h1apps</span>
+      </div>
+      <a class="login-btn" href="web/index.html" aria-label="تسجيل الدخول">دخول</a>
+    </header>
+
+    <section class="hero">
+      <article class="request-card">
+        <div class="section-title">
+          <div class="section-icon" aria-hidden="true">T</div>
+          <div>
+            <h1>طلب تكسي من مكتب الاسراء</h1>
+            <p class="subtitle">
+              صفحة سريعة لاستقبال بيانات الزبون والرحلة بتنسيق مطابق لهوية التطبيق.
+              الخدمة جزء من منظومة h1apps لإدارة المكاتب والسائقين.
+            </p>
+          </div>
+        </div>
+
+        <form>
+          <div class="field-grid">
+            <div class="field">
+              <label for="customer-name">اسم الزبون</label>
+              <input id="customer-name" name="customer-name" type="text" placeholder="اكتب اسم الزبون">
+            </div>
+            <div class="field">
+              <label for="customer-phone">رقم الهاتف</label>
+              <input id="customer-phone" name="customer-phone" type="tel" placeholder="05xxxxxxxx">
+            </div>
+            <div class="field">
+              <label for="pickup">مكان الانطلاق</label>
+              <input id="pickup" name="pickup" type="text" placeholder="مثال: وسط البلد">
+            </div>
+            <div class="field">
+              <label for="dropoff">الوجهة</label>
+              <input id="dropoff" name="dropoff" type="text" placeholder="مثال: الجامعة">
+            </div>
+            <div class="field-full">
+              <label for="notes">ملاحظة</label>
+              <textarea id="notes" name="notes" placeholder="أي تفاصيل إضافية عن الطلب"></textarea>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="primary-btn" type="button">إرسال الطلب</button>
+            <a class="secondary-btn" href="web/index.html">فتح التطبيق</a>
+          </div>
+        </form>
+      </article>
+
+      <aside class="side" aria-label="معلومات النظام">
+        <article class="access-card">
+          <img class="taxi-image" src="assets/images/taxii.png" alt="سيارة تكسي">
+          <div class="access-content">
+            <h2>دخول المكتب والشوفير</h2>
+            <p>إدارة الرحلات والطرود والجلسات المالية من لوحة تشغيل واحدة، مع متابعة حالة الطلبات والسائقين.</p>
+            <ul class="status-list">
+              <li><span class="dot" aria-hidden="true"></span>طلبات فورية</li>
+              <li><span class="dot" aria-hidden="true"></span>ربط مباشر مع المكتب</li>
+              <li><span class="dot" aria-hidden="true"></span>أرشفة مالية وتشغيلية</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="info-card">
+          <div class="section-icon" aria-hidden="true">H</div>
+          <div>
+            <strong>تابع لـ <span class="h1apps">h1apps</span></strong>
+            <span>تم تصميم هذه الصفحة بنفس ألوان ونمط تطبيق مكتب تكسي الاسراء.</span>
+          </div>
+        </article>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <span>مكتب تكسي الاسراء</span>
+      <span class="powered-by">Powered by <span class="h1apps">h1apps</span></span>
+    </footer>
+  </main>
+</body>
+</html>
