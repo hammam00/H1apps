@@ -1,22 +1,24 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="مكتب تكسي الاسراء، نظام إدارة رحلات وسائقين تابع لـ h1apps.">
-  <title>مكتب تكسي الاسراء | h1apps</title>
+  <meta name="description" content="الشروط والأحكام الخاصة بتطبيق مكتب تكسي الإسراء التابع لـ h1apps.">
+  <meta property="og:title" content="الشروط والأحكام | مكتب تكسي الإسراء">
+  <meta property="og:description" content="الشروط والأحكام الخاصة باستخدام تطبيق مكتب تكسي الإسراء.">
+  <meta property="og:image" content="https://h1apps.xyz/assets/logo.jpeg">
+  <link rel="icon" href="assets/logo.jpeg" type="image/jpeg">
+  <title>الشروط والأحكام | مكتب تكسي الإسراء</title>
+
   <style>
     :root {
-      --ink: #f5f1e8;
-      --panel: #fffcf6;
-      --panel-high: #ffffff;
-      --border: #d8cbb7;
+      --bg: #f5f1e8;
+      --card: #ffffff;
       --text: #1e2a32;
       --muted: #667783;
+      --border: #d8cbb7;
       --accent: #b98222;
-      --accent-blue: #2776c5;
-      --warning: #e36b20;
-      --danger: #d94242;
       --shadow: 0 14px 22px rgba(30, 42, 50, 0.08);
     }
 
@@ -27,10 +29,10 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background: var(--ink);
+      background: var(--bg);
       color: var(--text);
       font-family: Tahoma, Arial, sans-serif;
-      letter-spacing: 0;
+      line-height: 1.8;
     }
 
     a {
@@ -39,451 +41,202 @@
     }
 
     .page {
-      width: min(1120px, calc(100% - 32px));
+      width: min(900px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 24px 0 32px;
+      padding: 24px 0 40px;
     }
 
     .topbar {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 32px;
+      margin-bottom: 22px;
     }
 
     .logo {
-      display: grid;
-      width: 44px;
-      height: 44px;
-      place-items: center;
-      border-radius: 8px;
-      background: var(--text);
-      color: var(--accent);
-      font-size: 24px;
-      font-weight: 900;
-    }
-
-    .brand {
-      flex: 1;
-      min-width: 0;
+      width: 54px;
+      height: 54px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      background: #fff;
     }
 
     .brand strong {
       display: block;
       font-size: 18px;
-      line-height: 1.25;
-      font-weight: 900;
-    }
-
-    .brand span {
-      display: block;
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .login-btn,
-    .primary-btn,
-    .secondary-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 48px;
-      padding: 12px 18px;
-      border-radius: 8px;
-      border: 1px solid transparent;
-      font-size: 14px;
-      font-weight: 800;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .login-btn {
-      min-width: 48px;
-      padding: 0;
-      border-color: rgba(185, 130, 34, 0.28);
-      background: rgba(185, 130, 34, 0.14);
-      color: var(--text);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-      gap: 24px;
-      align-items: start;
-    }
-
-    .request-card,
-    .access-card,
-    .info-card {
-      border-radius: 8px;
-      border: 1px solid var(--border);
-    }
-
-    .request-card {
-      padding: 24px;
-      background: var(--panel-high);
-      box-shadow: var(--shadow);
-    }
-
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .section-icon {
-      display: grid;
-      width: 42px;
-      height: 42px;
-      place-items: center;
-      border-radius: 8px;
-      background: rgba(185, 130, 34, 0.14);
-      color: var(--accent);
-      font-size: 22px;
-      font-weight: 900;
-    }
-
-    h1,
-    h2,
-    p {
-      margin: 0;
-    }
-
-    h1 {
-      color: var(--text);
-      font-size: 32px;
-      line-height: 1.15;
-      font-weight: 900;
-    }
-
-    h2 {
-      font-size: 23px;
-      line-height: 1.18;
-      font-weight: 900;
-    }
-
-    .subtitle {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.65;
-      font-weight: 600;
-    }
-
-    .field-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .field,
-    .field-full {
-      display: grid;
-      gap: 7px;
-    }
-
-    .field-full {
-      grid-column: 1 / -1;
-    }
-
-    label {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      min-height: 48px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--panel-high);
-      color: var(--text);
-      padding: 13px 14px;
-      font: 600 14px/1.45 Tahoma, Arial, sans-serif;
-      outline: none;
-    }
-
-    textarea {
-      min-height: 108px;
-      resize: vertical;
-    }
-
-    input:focus,
-    textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(185, 130, 34, 0.16);
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .primary-btn {
-      background: var(--accent);
-      color: #2b2108;
-    }
-
-    .secondary-btn {
-      border-color: var(--border);
-      background: var(--panel);
-      color: var(--text);
-    }
-
-    .side {
-      display: grid;
-      gap: 16px;
-    }
-
-    .access-card {
-      overflow: hidden;
-      background: var(--text);
-      color: #ffffff;
-    }
-
-    .taxi-image {
-      display: block;
-      width: 100%;
-      aspect-ratio: 3 / 2;
-      object-fit: cover;
-      background: #efe7da;
-    }
-
-    .access-content {
-      padding: 24px;
-    }
-
-    .access-content h2 {
-      color: #ffffff;
-    }
-
-    .access-content p {
-      margin-top: 10px;
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 13px;
-      line-height: 1.6;
-      font-weight: 600;
-    }
-
-    .status-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 22px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .status-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: rgba(255, 255, 255, 0.84);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .dot {
-      width: 18px;
-      height: 18px;
-      border-radius: 8px;
-      border: 4px solid rgba(185, 130, 34, 0.24);
-      background: var(--accent);
-    }
-
-    .info-card {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 12px;
-      align-items: start;
-      padding: 18px;
-      background: var(--panel-high);
-    }
-
-    .info-card strong {
-      display: block;
-      font-size: 15px;
       font-weight: 900;
       line-height: 1.3;
     }
 
-    .info-card span {
+    .brand span {
       display: block;
-      margin-top: 5px;
+      margin-top: 2px;
       color: var(--muted);
       font-size: 13px;
+      font-weight: 700;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.3;
+      font-weight: 900;
+    }
+
+    .updated {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 26px 0 8px;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    p {
+      margin: 0 0 10px;
+      color: var(--text);
+      font-size: 15px;
       font-weight: 600;
-      line-height: 1.5;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding: 0 22px 0 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+      font-size: 15px;
+      font-weight: 600;
     }
 
     .footer {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 12px;
-      margin-top: 24px;
-      padding-top: 18px;
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 16px;
       border-top: 1px solid var(--border);
       color: var(--muted);
       font-size: 12px;
       font-weight: 700;
     }
 
-    .powered-by {
-      direction: ltr;
-      unicode-bidi: isolate;
-    }
-
     .h1apps {
-      color: var(--text);
       direction: ltr;
       unicode-bidi: isolate;
       font-weight: 900;
-    }
-
-    .info-card strong .h1apps {
-      display: inline;
-      margin-top: 0;
       color: var(--text);
-      font-size: inherit;
-      line-height: inherit;
     }
 
-    @media (max-width: 880px) {
+    @media (max-width: 560px) {
       .page {
         width: min(100% - 24px, 680px);
         padding-top: 16px;
       }
 
-      .topbar {
-        margin-bottom: 20px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .request-card,
-      .access-content {
-        padding: 18px;
+      .card {
+        padding: 20px;
       }
 
       h1 {
-        font-size: 27px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .brand span {
-        display: none;
-      }
-
-      .field-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .actions {
-        display: grid;
-      }
-
-      .primary-btn,
-      .secondary-btn {
-        width: 100%;
+        font-size: 25px;
       }
     }
   </style>
 </head>
+
 <body>
   <main class="page">
-    <header class="topbar" aria-label="رأس الصفحة">
-      <div class="logo" aria-hidden="true">T</div>
+    <header class="topbar">
+      <img class="logo" src="assets/logo.jpeg" alt="شعار مكتب تكسي الإسراء">
       <div class="brand">
-        <strong>مكتب تكسي الاسراء</strong>
-        <span>نظام تشغيل رحلات وسائقين تابع لـ h1apps</span>
+        <strong>مكتب تكسي الإسراء</strong>
+        <span>تابع لـ <span class="h1apps">h1apps</span></span>
       </div>
-      <a class="login-btn" href="web/index.html" aria-label="تسجيل الدخول">دخول</a>
     </header>
 
-    <section class="hero">
-      <article class="request-card">
-        <div class="section-title">
-          <div class="section-icon" aria-hidden="true">T</div>
-          <div>
-            <h1>طلب تكسي من مكتب الاسراء</h1>
-            <p class="subtitle">
-              صفحة سريعة لاستقبال بيانات الزبون والرحلة بتنسيق مطابق لهوية التطبيق.
-              الخدمة جزء من منظومة h1apps لإدارة المكاتب والسائقين.
-            </p>
-          </div>
-        </div>
+    <section class="card">
+      <h1>الشروط والأحكام</h1>
+      <p class="updated">آخر تحديث: 13-06-2026</p>
 
-        <form>
-          <div class="field-grid">
-            <div class="field">
-              <label for="customer-name">اسم الزبون</label>
-              <input id="customer-name" name="customer-name" type="text" placeholder="اكتب اسم الزبون">
-            </div>
-            <div class="field">
-              <label for="customer-phone">رقم الهاتف</label>
-              <input id="customer-phone" name="customer-phone" type="tel" placeholder="05xxxxxxxx">
-            </div>
-            <div class="field">
-              <label for="pickup">مكان الانطلاق</label>
-              <input id="pickup" name="pickup" type="text" placeholder="مثال: وسط البلد">
-            </div>
-            <div class="field">
-              <label for="dropoff">الوجهة</label>
-              <input id="dropoff" name="dropoff" type="text" placeholder="مثال: الجامعة">
-            </div>
-            <div class="field-full">
-              <label for="notes">ملاحظة</label>
-              <textarea id="notes" name="notes" placeholder="أي تفاصيل إضافية عن الطلب"></textarea>
-            </div>
-          </div>
+      <h2>1. قبول الشروط</h2>
+      <p>
+        باستخدام تطبيق أو نظام مكتب تكسي الإسراء، فإنك توافق على هذه الشروط والأحكام بالكامل.
+      </p>
 
-          <div class="actions">
-            <button class="primary-btn" type="button">إرسال الطلب</button>
-            <a class="secondary-btn" href="web/index.html">فتح التطبيق</a>
-          </div>
-        </form>
-      </article>
+      <h2>2. طبيعة الخدمة</h2>
+      <p>
+        التطبيق مخصص لإدارة طلبات التكسي، السائقين، الرحلات، الطرود، والجلسات التشغيلية الخاصة بالمكتب.
+      </p>
 
-      <aside class="side" aria-label="معلومات النظام">
-        <article class="access-card">
-          <img class="taxi-image" src="assets/images/taxii.png" alt="سيارة تكسي">
-          <div class="access-content">
-            <h2>دخول المكتب والشوفير</h2>
-            <p>إدارة الرحلات والطرود والجلسات المالية من لوحة تشغيل واحدة، مع متابعة حالة الطلبات والسائقين.</p>
-            <ul class="status-list">
-              <li><span class="dot" aria-hidden="true"></span>طلبات فورية</li>
-              <li><span class="dot" aria-hidden="true"></span>ربط مباشر مع المكتب</li>
-              <li><span class="dot" aria-hidden="true"></span>أرشفة مالية وتشغيلية</li>
-            </ul>
-          </div>
-        </article>
+      <h2>3. حسابات المستخدمين</h2>
+      <ul>
+        <li>يجب إدخال بيانات صحيحة عند استخدام النظام.</li>
+        <li>المستخدم مسؤول عن الحفاظ على سرية بيانات الدخول الخاصة به.</li>
+        <li>يحق للإدارة إيقاف أي حساب عند إساءة الاستخدام أو مخالفة التعليمات.</li>
+      </ul>
 
-        <article class="info-card">
-          <div class="section-icon" aria-hidden="true">H</div>
-          <div>
-            <strong>تابع لـ <span class="h1apps">h1apps</span></strong>
-            <span>تم تصميم هذه الصفحة بنفس ألوان ونمط تطبيق مكتب تكسي الاسراء.</span>
-          </div>
-        </article>
-      </aside>
+      <h2>4. الطلبات والرحلات</h2>
+      <ul>
+        <li>يتم تسجيل الطلبات حسب المعلومات المقدمة من الزبون أو الموظف.</li>
+        <li>قد يتم تعديل أو إلغاء الطلب حسب ظروف التشغيل وتوفر السائقين.</li>
+        <li>المكتب غير مسؤول عن أي معلومات خاطئة يتم إدخالها من المستخدم.</li>
+      </ul>
+
+      <h2>5. السائقون</h2>
+      <ul>
+        <li>يلتزم السائق بتحديث حالة الرحلة والطلبات بشكل صحيح.</li>
+        <li>يمنع استخدام النظام لأي غرض خارج عمل المكتب.</li>
+        <li>أي تلاعب بالبيانات المالية أو التشغيلية قد يؤدي إلى إيقاف الحساب.</li>
+      </ul>
+
+      <h2>6. البيانات والخصوصية</h2>
+      <p>
+        يتم استخدام البيانات داخل النظام لأغراض التشغيل، المتابعة، المحاسبة، وتحسين الخدمة فقط.
+      </p>
+
+      <h2>7. الموقع والتتبع</h2>
+      <p>
+        قد يستخدم النظام بيانات الموقع لمتابعة حالة السائقين والرحلات أثناء العمل، وذلك لتحسين إدارة الطلبات.
+      </p>
+
+      <h2>8. المسؤولية</h2>
+      <p>
+        لا يتحمل h1apps أو مكتب تكسي الإسراء مسؤولية أي ضرر ناتج عن سوء استخدام التطبيق أو إدخال بيانات غير صحيحة.
+      </p>
+
+      <h2>9. التعديلات</h2>
+      <p>
+        يحق لإدارة النظام تعديل هذه الشروط في أي وقت، ويعتبر استمرار استخدام التطبيق موافقة على التعديلات.
+      </p>
+
+      <h2>10. التواصل</h2>
+      <p>
+        لأي استفسار أو طلب متعلق بالشروط والأحكام، يرجى التواصل مع إدارة مكتب تكسي الإسراء.
+      </p>
+
+      <footer class="footer">
+        <span>مكتب تكسي الإسراء</span>
+        <span>Powered by <span class="h1apps">h1apps</span></span>
+      </footer>
     </section>
-
-    <footer class="footer">
-      <span>مكتب تكسي الاسراء</span>
-      <span class="powered-by">Powered by <span class="h1apps">h1apps</span></span>
-    </footer>
   </main>
 </body>
 </html>
+```
